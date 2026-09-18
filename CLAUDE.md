@@ -164,10 +164,16 @@ böylece Stitch markup'ı doğrudan taşınabiliyor. İkonlar Material Symbols O
   yazılmış `admin.css` kullanıyor, ona dokunulmadı.
 - **Test komutu:** `pnpm -r test` şu an paketleri doğru bulamıyor (bilinen aksaklık);
   paket paket çalıştır: `pnpm --filter @matematik-kasifleri/<paket> test`.
-- **Dev sunucu açıkken `pnpm build` çalıştırma.** İkisi de `apps/web/.next` klasörünü
-  kullanıyor; production derlemesi çalışan dev sunucunun chunk'larını eziyor ve tarayıcıda
-  `Cannot find module './713.js'` hatası çıkıyor. Kodda sorun yok — dev sunucuyu durdur,
-  `rm -rf apps/web/.next`, yeniden başlat.
+- **Dev sunucu açıkken derleme yapacaksan ayrı klasöre derle:**
+  `NEXT_DIST_DIR=.next-build pnpm --filter @matematik-kasifleri/web build`.
+  Aksi hâlde production derlemesi çalışan dev sunucunun `.next` chunk'larını ezer ve
+  tarayıcıda `Cannot find module './713.js'` çıkar (kodda sorun yoktur; sunucuyu durdur,
+  `rm -rf apps/web/.next`, yeniden başlat).
+- **`/admin` Tailwind kullanmıyor**, elle yazılmış `admin.css` kullanıyor. Tailwind'in
+  preflight'ı tüm sayfalarda çalıştığı için başlık/paragraf varsayılanları `.admin-shell`
+  içinde elle geri veriliyor. Ayrıca kök `<html>` üzerinde `data-theme="light"` var —
+  bu olmadan ui-kit tokenları işletim sisteminin koyu temasına kayıp açık gövde üzerinde
+  okunmaz hâle geliyor.
 - **Dil:** Kod ve teknik yorumlar İngilizce; dokümanlar, içerik ve kullanıcıya görünen her
   metin Türkçe. Çocuğa görünen metinlerde kaygı kelimeleri yok ("sınav", "yanlış",
   "başarısız", "kaybettin" → "usta görevi", "bu sefer olmadı", "tekrar bak").

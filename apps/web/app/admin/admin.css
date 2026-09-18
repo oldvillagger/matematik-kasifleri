@@ -5,7 +5,64 @@
   margin: 0 auto;
   padding: var(--space-4) var(--space-3) var(--space-6);
   font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
   color: var(--ink);
+}
+
+/* Tailwind'in preflight'ı (öğrenci tarafı için gerekli) başlık/paragraf/liste
+   varsayılanlarını sıfırlıyor. Admin paneli elle yazılmış CSS kullandığı için
+   o varsayılanları burada, sadece .admin-shell içinde geri veriyoruz. */
+.admin-shell h1 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 var(--space-2);
+}
+.admin-shell h2 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: var(--space-4) 0 var(--space-2);
+}
+.admin-shell h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-1);
+}
+.admin-shell p {
+  max-width: 68ch;
+  margin: 0 0 var(--space-2);
+}
+.admin-shell a {
+  color: var(--primary);
+}
+.admin-shell code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--paper-sunken);
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-sm);
+}
+.admin-shell strong {
+  font-weight: 700;
+}
+.admin-shell small {
+  font-size: 0.85rem;
+}
+.admin-shell input[type="text"],
+.admin-shell input[type="number"],
+.admin-shell textarea,
+.admin-shell select {
+  font: inherit;
+  color: inherit;
+  background: var(--paper-raised);
+}
+.admin-shell input[type="checkbox"] {
+  appearance: auto;
 }
 
 .admin-top-strip {

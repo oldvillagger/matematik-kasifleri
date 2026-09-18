@@ -45,3 +45,6 @@ pnpm-debug.log*
 # Geçici
 tmp/
 .scratch/
+
+# Ayri derleme klasoru (dev sunucuyu ezmemek icin)
+.next-build/

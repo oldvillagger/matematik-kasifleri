@@ -7,7 +7,10 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="tr">
+    // data-theme="light": öğrenci tarafı Stitch paletiyle açık renge sabit.
+    // Bu olmadan ui-kit tokenları (yalnızca /admin kullanıyor) işletim
+    // sisteminin koyu temasına kayıyor ve açık gövde üzerinde okunmuyor.
+    <html lang="tr" data-theme="light">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -317,3 +317,48 @@ alınması istendi.
 
 1. Kullanıcı test etsin, K13e'yi netleştirsin.
 2. Git commit + push (kullanıcının önceki tercihi: doğrudan `main`'e, PR ceremonisi yok).
+
+---
+
+## Oturum 002 — devam 5: Kullanıcı test etti, düzeltme verdi (K14)
+
+Kullanıcı `localhost:3000`'i test etti ve **memnun kalmadı** — iki ekran görüntüsü gönderdi
+(kendi Stitch tasarımından bir "gerçek test" ekranı + ders kitabından görsel-tabanlı bir
+etkinlik sayfası) ve şunu netleştirdi: "senden istediğim sistem bu değildi, benim verdiğim
+tasarımı kullanmamışsın."
+
+**Kök neden:** Önceki oturumda (devam 4) Stitch tasarımının sadece `DESIGN.md` (renk/tipografi
+tokenları) kısmını okudum, gerçek ekran görüntülerini/`code.html`'lerini hiç incelemedim.
+Sonuç: doğru renk paletiyle ama **yanlış bilgi mimarisi ve yanlış faz-görsel eşlemesiyle** bir
+arayüz kurdum — A1'de (Keşfet) rakam gösterdim, oysa o aşama tamamen görsel/materyal olmalıydı;
+gerçek test aşaması (Assessment) için ayrı bir ekran kurmadım, hepsini aynı basit sayısal
+cevap kutusuna sıkıştırdım.
+
+### Yapılanlar
+
+1. Zip'teki 4 ekranın `screen.png`'leri incelendi (ana sayfa, ünite/konu listesi, test ekranı,
+   başarı/hata analizi — `code.html`'ler bir sonraki oturuma bırakıldı, zaman/bağlam bütçesi
+   nedeniyle).
+2. **K14 kararı alındı** (kullanıcının açık isteğiyle, önceki oturumda flag'lediğim
+   kırmızı-çizgi çelişkisi artık bilgilendirilmiş bir override ile çözüldü): puan, seri
+   (streak — admin togglelı, varsayılan açık), rozet, hata kitapçığı **eklenecek**; haftalık
+   liderlik tablosu **şimdilik ertelendi**; A1 içinde puan/seri gösterimi **hâlâ yasak**
+   (genel navigasyonda kalır). Detay ve tam gerekçe: `agents-notes/09-arayuz-yeniden-tasarim-v2.md` §2.
+3. **Düzeltilmiş bilgi mimarisi ve 3 fazlı görsel model** yazıldı (aynı dosya §3-4):
+   Ana Sayfa (ders kartları) → Ders Sayfası (ünite/konu akordiyonu, "akış şeklinde") →
+   Konu (3 faz: Keşfet=sayısız/görsel, Bağla=sayılı+ipucu/hatasız, Gerçek Teste Hazırlık=
+   Stitch'in test ekranı birebir) → Analiz/Hata Kitapçığı sayfası (yeni).
+4. **CLAUDE.md güncellendi:** kırmızı çizgi satırı K14'e göre yeniden yazıldı, "Durum" ve
+   "Önce şunları oku" yeni plana işaret edecek şekilde güncellendi.
+5. **Kodda henüz değişiklik yapılmadı** — kullanıcı önce planın kaydedilmesini, sonra
+   `/compact` çalıştıracağını söyledi. Uygulama bir sonraki oturumun/turun işi.
+
+### Sonraki adım (bkz. `09-arayuz-yeniden-tasarim-v2.md` §5 TODO tablosu, sırayla)
+
+1. Stitch'in 4 `code.html`'ini oku (henüz okunmadı).
+2. `BalanceGame`/`GridGame`/`PatternGame` A1 modlarından rakamları kaldır (görsel/şekil tabanlı).
+3. A2'deki kırmızı "wrong" mesajını otomatik ipucu akışına çevir.
+4. Gerçek test ekranını (soru navigatörü + sidebar + AI Yardım stub) kur.
+5. Ana sayfayı ve ders sayfasını (ünite/konu akordiyonu) Stitch'e göre yeniden yaz.
+6. Puan/seri/rozet veri modeli + admin'de streak aç/kapa anahtarı.
+7. Hata Kitapçığı / analiz sayfası.

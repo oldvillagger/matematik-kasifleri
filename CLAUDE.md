@@ -18,11 +18,12 @@ TYMM 5. sınıf matematik bu platformun ilk doldurulmuş kursu. Yeni ders/konu e
 gerektirmemeli; bu yüzden içerik yönetimi için bir **admin panel** (`apps/studio`) mimarisi de
 baştan tasarlanıyor, önceliği Faz 2'den öne çekildi.
 
-**Durum (2026-09-18 güncellendi):** Faz 0 hızlandırıldı — kullanıcı "2 aylık proje değil, en
-kısa zamanda çalışır hâli bitsin" dedi. **4 konu uçtan uca oynanabilir durumda:**
-MAT.5.2.1 (Yankı Kapısı), MAT.5.2.3 (Örüntü Anahtarı), MAT.5.4.1 + MAT.5.4.2 (Harita Kâşifi).
-A1→A2→A3→Assessment tam döngü çalışıyor, `pnpm build` temiz. Detay:
-`agents-notes/00-oturum-gunlugu.md` Oturum 002 devam 4.
+**Durum (2026-09-18 güncellendi, 2 kez):** Faz 0 hızlandırıldı, 4 konu uçtan uca çalışır hâle
+getirildi (A1→A2→A3→Assessment, `pnpm build` temiz) — ama **arayüz kullanıcının kastettiği
+sistemle uyuşmuyordu** (A1'de sayı olmamalıydı, gerçek test ekranı eksikti, Stitch tasarımı
+sadece renk olarak alınmıştı). Kullanıcı düzeltme verdi (K14) — **düzeltilmiş plan yazıldı,
+henüz uygulanmadı.** Sıradaki iş bu planı uygulamak. Detay ve TODO listesi:
+`agents-notes/09-arayuz-yeniden-tasarim-v2.md` (önce oku — §5 TODO tablosu).
 
 ---
 
@@ -30,6 +31,7 @@ A1→A2→A3→Assessment tam döngü çalışıyor, `pnpm build` temiz. Detay:
 
 | Sıra | Dosya | Ne için |
 |---|---|---|
+| 0 | `agents-notes/09-arayuz-yeniden-tasarim-v2.md` | **EN GÜNCEL — arayüz düzeltme planı, TODO §5** |
 | 1 | `README.md` | Ürünün ne olduğu, 3 ilke, mimari özet |
 | 2 | `agents-notes/00-oturum-gunlugu.md` | Alınan 7 karar + **cevaplanmamış 5 açık soru** |
 | 3 | `agents-notes/03-pedagojik-mimari.md` | Çekirdek döngü + **yasaklı desenler** (§5 — kırmızı çizgi) |
@@ -59,7 +61,13 @@ Bunlar tercih değil, pedagojik/etik sınır. Bir değişiklik bunlardan birini 
   maddesi bu kuralı bozmaz çünkü ayrı ve isteğe bağlıdır.)
 - **A1 (somut) aşamasında puan, skor, kırmızı X, "yanlış" sesi olamaz.** Hata diegetic
   olmalı: terazi eğilir, köprü sallanır.
-- **Genel lider tablosu, seri (streak) baskısı, can/enerji sistemi, şans kutusu yok.**
+- **Genel lider tablosu yok (backlog — kullanıcı erteledi).** **Seri (streak) sistemi VAR**
+  — kullanıcının 2026-09-18 tarihli açık, bilgilendirilmiş kararıyla (K14,
+  `agents-notes/09-arayuz-yeniden-tasarim-v2.md` §2) bu kural gevşetildi: admin panelden
+  aç/kapa anahtarlı, varsayılan açık, kullanıcı davranış verisi toplanınca gözden geçirilecek.
+  Puan sayacı, rozetler, hata kitapçığı da eklenecek (aynı karar). **A1 oyun ekranının içinde
+  puan/seri gösterilmez** — bunlar genel navigasyonda (üst bar, ana sayfa) kalır, bu ayrım
+  değişmedi. Can/enerji sistemi, şans kutusu **hâlâ yasak.**
 - **Öğrenme içeriğini kilitleyen ücretli katman yok.** Ödeme yalnızca kozmetik olabilir.
 - **Çocuğa gösterilen satın alma çağrısı yok, reklam yok, açık sohbet yok.**
 - **Çocuktan e-posta, tam ad, doğum tarihi, konum toplanmaz.** Takma ad + sınıf düzeyi.

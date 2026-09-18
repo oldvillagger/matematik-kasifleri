@@ -1,0 +1,71 @@
+/*
+ * Matematik Kâşifleri — design tokens
+ *
+ * Direction: "kâşif günlüğü" (explorer's field journal) — cartography, ink,
+ * brass instruments, aged expedition paper. Grounded in the product's own
+ * name and lore (agents-notes/04-oyun-tasarimi.md), not a generic palette.
+ * Deliberately NOT the cream+terracotta AI-default: warmer/more khaki paper,
+ * no orange accent — pine green + brass + muted map-blue instead.
+ *
+ * Two surfaces share these tokens with different intensity:
+ *   apps/web    — warmer, more illustrated, generous space (10-11 yaş kâşif)
+ *   apps/studio — same palette, denser/cooler application (içerik masası)
+ *
+ * Fonts: Fraunces (display, literary/journal character) + Karla (body,
+ * warm humanist sans). JetBrains Mono ONLY for curriculum codes
+ * (MAT.5.2.1) — those are genuinely codes, not decoration.
+ */
+
+:root {
+  --ink: #2b2a1f;
+  --paper: #ece3cc;
+  --paper-raised: #f5eeda;
+  --pine: #2f5d50;
+  --pine-strong: #204039;
+  --brass: #a8752f;
+  --ink-blue: #35566b;
+  --coral: #b1473c;
+  --border: rgba(43, 42, 31, 0.18);
+  --border-strong: rgba(43, 42, 31, 0.32);
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Karla", -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Courier New", monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 64px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #ede6d2;
+    --paper: #182420;
+    --paper-raised: #202e29;
+    --pine: #6fbfa8;
+    --pine-strong: #8fd6c0;
+    --brass: #d9a94f;
+    --ink-blue: #7fa8c4;
+    --coral: #d97b70;
+    --border: rgba(237, 230, 210, 0.16);
+    --border-strong: rgba(237, 230, 210, 0.3);
+  }
+}
+
+:root[data-theme="dark"] {
+  --ink: #ede6d2;
+  --paper: #182420;
+  --paper-raised: #202e29;
+  --pine: #6fbfa8;
+  --pine-strong: #8fd6c0;
+  --brass: #d9a94f;
+  --ink-blue: #7fa8c4;
+  --coral: #d97b70;
+  --border: rgba(237, 230, 210, 0.16);
+  --border-strong: rgba(237, 230, 210, 0.3);
+}

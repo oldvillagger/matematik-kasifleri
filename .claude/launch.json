@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "studio",
+      "runtimeExecutable": "C:\\Users\\burak\\AppData\\Roaming\\npm\\pnpm.cmd",
+      "runtimeArgs": ["--filter", "@matematik-kasifleri/studio", "dev"],
+      "port": 3100
+    }
+  ]
+}

@@ -7,12 +7,19 @@ bilmesi gereken minimum bilgi burada; ayrıntı `agents-notes/` altında.
 
 ## Proje nedir
 
-**Matematik Kâşifleri** — TYMM (Türkiye Yüzyılı Maarif Modeli) 5. sınıf matematik müfredatını
-kapsayan, oyun tabanlı bir öğrenme modülü. Ticari ürün. Staj yerinin mevcut eğitim yazılımına
+**Matematik Kâşifleri** — TYMM (Türkiye Yüzyılı Maarif Modeli) 5. sınıf matematik müfredatıyla
+başlayan, oyun tabanlı bir öğrenme motoru. Ticari ürün. Staj yerinin mevcut eğitim yazılımına
 **entegre edilecek** — yani teslim edilen şey bir web sitesi değil, başka bir platforma
 gömülebilen bir öğrenme motoru.
 
-**Durum:** Planlama tamamlandı, kod henüz yazılmadı. Sıradaki iş Faz 0 / Sprint S0.1.
+**Önemli:** Ürün TYMM matematiğe kilitli değil. Mimari baştan **çok-derslik/çok-konulu bir
+platform** olacak şekilde kuruluyor (bkz. `agents-notes/08-genisletilmis-platform-mimarisi.md`) —
+TYMM 5. sınıf matematik bu platformun ilk doldurulmuş kursu. Yeni ders/konu eklemek kod yazmayı
+gerektirmemeli; bu yüzden içerik yönetimi için bir **admin panel** (`apps/studio`) mimarisi de
+baştan tasarlanıyor, önceliği Faz 2'den öne çekildi.
+
+**Durum:** Planlama tamamlandı, kod henüz yazılmadı. Sıradaki iş Faz 0 / Sprint S0.1
+(monorepo iskeleti kısmen kuruldu — bkz. `agents-notes/00-oturum-gunlugu.md` Oturum 002).
 
 ---
 
@@ -25,11 +32,15 @@ gömülebilen bir öğrenme motoru.
 | 3 | `agents-notes/03-pedagojik-mimari.md` | Çekirdek döngü + **yasaklı desenler** (§5 — kırmızı çizgi) |
 | 4 | `agents-notes/05-teknik-mimari.md` | Yığın kararı, monorepo yapısı, içerik şeması, ADR'ler |
 | 5 | `agents-notes/06-yol-haritasi.md` | Şu an hangi sprintteyiz, kabul kriterleri ne |
+| 6 | `agents-notes/08-genisletilmis-platform-mimarisi.md` | **Oturum 002 kararları** — çok-derslik jenerik veri modeli, admin panel, Konu Sonu Testi |
 
-Görev bir modülün oyun mekaniğine dokunuyorsa → `agents-notes/04-oyun-tasarimi.md`
+Görev bir modülün oyun mekaniğine dokunuyorsa → `agents-notes/04-oyun-tasarimi.md` (müfredat
+eşlemesi hâlâ geçerli) + `agents-notes/09-oyun-konseptleri-v2.md` (varsa — yaratıcı konsept
+yeniden tasarımı, `08` §4)
 Görev bir öğrenme çıktısına dokunuyorsa → `agents-notes/02-mufredat-haritasi.md` +
 `agents-notes/kaynaklar/tymm-5-matematik-ciktilari.md`
 Görev veri/kullanıcı/gizlilik ile ilgiliyse → `agents-notes/07-ticari-kvkk-entegrasyon.md`
+Görev içerik modeli / admin panel / yeni ders ekleme ile ilgiliyse → `agents-notes/08-genisletilmis-platform-mimarisi.md`
 
 ---
 
@@ -38,8 +49,11 @@ Görev veri/kullanıcı/gizlilik ile ilgiliyse → `agents-notes/07-ticari-kvkk-
 Bunlar tercih değil, pedagojik/etik sınır. Bir değişiklik bunlardan birini ihlal ediyorsa
 **yapma, önce kullanıcıya sor.** Gerekçeler `agents-notes/03-pedagojik-mimari.md` §5'te.
 
-- **A3 (soyut) aşamasında süre sınırı olamaz.** `timeLimit` alanı şemada A3 için tanımlı
-  değildir ve tanımlanmayacaktır. Süreli matematik testi kaygı üretiyor.
+- **A3 (soyut) ve ASSESSMENT (Konu Sonu Testi) aşamalarında süre sınırı olamaz.** `timeLimit`
+  alanı şemada bu ikisi için tanımlı değildir ve tanımlanmayacaktır. Süreli matematik testi
+  kaygı üretiyor. (Opsiyonel, varsayılan kapalı, veli/öğretmen açarsa görünen süreli pratik modu
+  Faz 2 backlog'unda — bkz. `agents-notes/08-genisletilmis-platform-mimarisi.md` §3. Bu backlog
+  maddesi bu kuralı bozmaz çünkü ayrı ve isteğe bağlıdır.)
 - **A1 (somut) aşamasında puan, skor, kırmızı X, "yanlış" sesi olamaz.** Hata diegetic
   olmalı: terazi eğilir, köprü sallanır.
 - **Genel lider tablosu, seri (streak) baskısı, can/enerji sistemi, şans kutusu yok.**
@@ -111,8 +125,19 @@ sonraki oturumda yeniden tartışılır.
 
 ## Cevaplanmamış sorular (bunlara dayanan iş yapma, önce sor)
 
-1. Staj yerinin mevcut platformunun yığını ne? (entegrasyon senaryosunu bu belirler)
-2. Kullanıcı kim — okul lisansı (B2B) mı, veli aboneliği (B2C) mi?
+1. ~~Staj yerinin mevcut platformunun yığını ne?~~ **Şimdilik gündem dışı** — kullanıcı: "entegrasyonu
+   şuan düşünmeye gerek yok" (2026-09-18). Entegrasyon senaryosu tasarımına (Senaryo A/B/C,
+   `05-teknik-mimari.md` §7) şimdi zaman harcanmayacak; `engine-core`'un çerçeveden bağımsız
+   kalması zaten bu kararı erken vermeyi gereksiz kılıyor.
+2. ~~Kullanıcı kim — B2B mi B2C mi?~~ **Kapandı** — kullanıcı: "lisans kısmı entegre edilecek
+   sistemde zaten var, düşünme" (2026-09-18). Lisans/abonelik/kullanıcı yönetimi **bizim
+   kapsamımızda değil**; motor, host sistemin zaten sahip olduğu bir lisans/kimlik yapısına
+   gömülecek. Bu, `07-ticari-kvkk-entegrasyon.md` §3'teki B2B/B2C mimarisini de gereksiz kılıyor
+   — kendi auth/faturalama sistemimizi tasarlamıyoruz.
 3. Hedef cihaz? (okul tableti / Chromebook / veli telefonu)
-4. İçeriği kim üretecek — editör paneli gerekli mi?
+4. İçeriği kim üretecek — editör paneli gerekli mi? **Kısmen cevaplandı** — admin panel (K11,
+   `08-genisletilmis-platform-mimarisi.md`) öncelik kazandı, ama "kim kullanacak" (öğretmen mi,
+   içerik ekibi mi) hâlâ açık.
 5. Repo public kalacak mı? (ticari ürün + staj sözleşmesi fikri mülkiyet maddesi)
+6. ~~MAT.5.4.x süreç bileşenleri~~ **Kapandı (2026-09-18)** — resmî `tymm.meb.gov.tr` portalından
+   23 çıktının tamamı için süreç bileşenleri bulundu ve işlendi. Detay: `agents-notes/kaynaklar/README.md`.

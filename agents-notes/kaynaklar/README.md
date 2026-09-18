@@ -24,6 +24,67 @@ pdftotext -enc UTF-8 "TYMM Ortaokul Matematik Dersi Öğretim Programı (5-8. S�
 grep -oE "MAT\.5\.[0-9]+\.[0-9]+\." program.txt | sort -u -V   # 23 kod
 ```
 
+> **2026-09-18 güncellemesi:** Bu makinede `pdftotext`/poppler yok. Aynı işi Node.js
+> `pdf-parse` paketiyle yaptık (`~/Downloads/`'daki PDF'ler bu makinede de mevcut çıktı —
+> orijinal yerel yol notu hâlâ geçerli). MAT.5.4.1–5.4.4 süreç bileşenleri bu şekilde
+> `TYMM 5. Sınıf Matematik Öğrenme Çıktıları ve Süreç Bileşenleri.pdf`'ten çıkarılıp
+> `tymm-5-matematik-ciktilari.md`'ye işlendi.
+>
+> **Önemli bulgu:** Bu PDF **tek başına matematik değil** — Türkçe (5), Matematik (5), Fen
+> Bilimleri (5), Sosyal Bilgiler (5), Din Kültürü ve Ahlak Bilgisi (5) ve lise (9. sınıf)
+> Matematik/Fizik/Kimya/Biyoloji/Tarih/Coğrafya derslerinin **tamamının** öğrenme çıktıları ve
+> süreç bileşenlerini içeren birleşik bir TYMM paketi. **Bu, `08-genisletilmis-platform-mimarisi.md`
+> §2'deki çok-derslik karar (K10) için doğrudan veri kaynağı** — yeni ders eklerken sıfırdan
+> araştırma gerekmeyecek, aynı PDF'ten çıkarılabilir.
+>
+> **Not:** Bu belgedeki matematik bölümü MAT.5.1, 5.3, 5.4 temalarını içeriyor; MAT.5.2, 5.5, 5.6
+> bu belgede yok (muhtemelen bir seçilmiş-örnekler paketi, tam 133 sayfalık resmî belgenin
+> kendisi değil). **Bu boşluk kapatıldı** — bkz. aşağıdaki resmî portal kaynağı.
+
+### Resmî MEB TYMM portalı — `tymm.meb.gov.tr` (2026-09-18 eklendi)
+
+Kullanıcının verdiği kaynak: `https://tymm.meb.gov.tr/ogretim-programlari/ortaokul-matematik-dersi/6`.
+Bu, ortaokul matematik 5. sınıfın 6 temasının **tek doğruluk kaynağı web arayüzü** — her tema
+kendi alt sayfasında öğrenme çıktısı + süreç bileşenlerini tam metin olarak veriyor. Yukarıdaki
+PDF'lerle çapraz doğrulandı, birebir örtüşüyor.
+
+| Tema | URL |
+|---|---|
+| 1. Sayılar ve Nicelikler (1) | `tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/447` |
+| 1. Sayılar ve Nicelikler (2) | `tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/449` |
+| 2. İşlemlerle Cebirsel Düşünme | `tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/450` |
+| 3. Geometrik Şekiller | `tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/448` |
+| 4. Geometrik Nicelikler | `tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/451` |
+| 5. İstatistiksel Araştırma Süreci | `tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/452` |
+| 6. Veriden Olasılığa | `tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/455` |
+
+Bu portal aynı domain deseniyle **her ders/sınıf için** var (`tymm.meb.gov.tr/ogretim-programlari/<ders-slug>`).
+Bu, `08-genisletilmis-platform-mimarisi.md` §2'deki çok-derslik kararının (K10) **en güvenilir
+veri kaynağı** — yeni bir ders eklenirken PDF çıkarma yerine doğrudan bu portaldan taranabilir.
+
+**Sonuç (2026-09-18):** 23 öğrenme çıktısının **tamamı** artık tam süreç bileşenleriyle
+kaynaklı (`tymm-5-matematik-ciktilari.md` ve `packages/curriculum/src/outcomes.ts`). Önceki
+eksik: MAT.5.1.1, MAT.5.1.3-a, MAT.5.3.1–7 (7 çıktı), MAT.5.5.1–2, MAT.5.6.1, MAT.5.6.2-b.
+Hepsi bu portaldan kapatıldı.
+
+### Ders kitapları (2026-09-18 eklendi, proje köküne — gitignore korumalı)
+
+Kullanıcı resmî 2026-2027 TYMM 5. sınıf matematik ders kitaplarını proje köküne bıraktı:
+`TYMM 5. Sınıf Matematik Ders Kitabı 1.pdf` (171 s.) ve `...Kitabı 2.pdf` (189 s.). `.gitignore`
+`*.pdf` kuralı bunları zaten kapsıyor, repoya karışmazlar.
+
+**İçindekiler (kitabın kendi sıralaması, resmî tema numarasıyla aynı değil):**
+- Kitap 1: 1.Tema Geometrik Şekiller → 2.Tema Sayılar ve Nicelikler(1)/Doğal Sayılar → 3.Tema
+  Geometrik Nicelikler
+- Kitap 2: 4.Tema Sayılar ve Nicelikler(2)/Kesirler → 5.Tema İstatistiksel Araştırma Süreci →
+  2.Tema (devamı) Eşitliğin Korunumu/İşlem Önceliği/Örüntüler → (6.Tema Olasılık, kitabın
+  devamında)
+
+**Kullanım amacı:** İçerik yazarken (S0.2+) gerçek örnek problem, terminoloji ve MEB'in konuyu
+sunuş sırası için referans. `agents-notes/kaynaklar/tymm-5-matematik-ciktilari.md`'nin yerini
+almaz — o hâlâ tek doğruluk kaynağı (öğrenme çıktısı/süreç bileşeni kodları için). Kitap sadece
+örnek/dil kaynağı.
+
 ---
 
 ## İkincil — araştırma raporu

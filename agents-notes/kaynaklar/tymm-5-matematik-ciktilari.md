@@ -16,6 +16,19 @@ Bu dosya, `packages/curriculum` paketinin kaynağıdır. Kod uydurmak yasak; bu 
 | MAT.5.1.3 | Gerçek yaşam durumlarına karşılık gelen kesirleri farklı biçimlerde temsil edebilme |
 | MAT.5.1.4 | Farklı gösterimlerle ifade edilen kesirlerin karşılaştırılmasına yönelik çıkarım yapabilme |
 
+> **Kaynak (2026-09-18 eklendi):** `tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/447` (resmî
+> MEB TYMM portalı). Aşağıdaki MAT.5.1.1 süreç bileşenleri buradan.
+
+### MAT.5.1.1 süreç bileşenleri
+```
+a) Günlük hayattaki farklı bağlamlardan yola çıkarak altıdan çok basamaklı sayılar hakkında
+   bilgi toplar.
+b) Sayıların bölükleri ile okunuşları arasındaki ortak özellikleri belirler.
+c) Sayıların bölükleri ile okunuşları arasındaki farklılıkları belirler.
+ç) Sayıların bölükleri ile okunuşları arasındaki örüntüler üzerinden basamak sayısı altıdan
+   çok olan sayıların okunuş ve yazılışları hakkında önermelerde bulunur.
+```
+
 ### MAT.5.1.2 süreç bileşenleri (9 adet — programın en uzun çıktısı)
 ```
 a) Problemin içerdiği sayı ve işlem bileşenlerini belirler.
@@ -34,7 +47,10 @@ h) Genellemenin geçerliliğini matematiksel örneklerle değerlendirir.
 
 ### MAT.5.1.3 süreç bileşenleri
 ```
-b) ...ilişkilendirmek için farklı modelleri (yüzlük kart, somut modeller, sayı doğrusu
+a) Kesirlerin farklı gösterimlerinin (bileşik, tam sayılı, ondalık, yüzde) gerçek yaşam
+   durumu içerisindeki kullanımını anlar.
+b) Gerçek yaşam durumlarında karşılaşılan kesirlerin farklı gösterimlerini
+   ilişkilendirmek için farklı modelleri (yüzlük kart, somut modeller, sayı doğrusu
    gibi) seçer.
 c) Seçilen modelleri kullanır.
 ç) Kullanılan modelleri kesirlerin farklı gösterimleri ile yorumlar.
@@ -130,16 +146,135 @@ c) Dönüştürdüğü algoritmik yapının içerdiği matematiksel ilişkileri 
 
 > **Not:** 5.3.1, 5.3.3 ve 5.3.7 "matematiksel araç ve teknolojiden yararlanabilme" diye yazılmış — yani pergel, cetvel ve açıölçer kullanımı çıktının **içinde**. Fiziksel paralel katman bu tema için zorunlu.
 
+> **Kaynak (2026-09-18 eklendi):** `tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/448` (resmî
+> MEB TYMM portalı). Aşağıdaki 7 çıktının tamamının süreç bileşenleri buradan.
+
+### MAT.5.3.1 süreç bileşenleri
+```
+a) Nokta, doğru, doğru parçası, ışın, açı, çember ve dikme çiziminde gerekli araç ve
+   teknolojileri tanır.
+b) Nokta, doğru, doğru parçası, ışın, açı, çember ve dikmeyi oluşturmak için uygun olan
+   araç ve teknolojileri belirler.
+c) Nokta, doğru, doğru parçası, ışın, açı, çember ve dikmeyi oluşturmak için uygun araç
+   ve teknolojileri kullanır.
+```
+
+### MAT.5.3.2 süreç bileşenleri
+```
+a) Temel geometrik çizimlere dayalı deneyimlerini gözden geçirir.
+b) Temel geometrik çizimlerin özelliklerine yönelik çıkarım yapar.
+c) Çıkarımını farklı örnekler üzerinden değerlendirir.
+```
+
+### MAT.5.3.3 süreç bileşenleri
+```
+a) Açı ölçmek için gerekli araç ve teknolojiyi tanır.
+b) Açı ölçmek için uygun araç ve teknolojiyi belirler.
+c) Açı ölçmek için uygun araç ve teknolojiyi kullanır.
+```
+
+### MAT.5.3.4 süreç bileşenleri
+```
+a) Düzlemde iki veya üç doğrunun birbirine göre durumuna bağlı olarak oluşabilecek
+   açılara dair varsayımlarda bulunur.
+b) Düzlemde iki veya üç doğrunun birbirine göre durumuna bağlı olarak oluşan açıları
+   belirleyerek listeler.
+c) Belirlediği açıları varsayımlarıyla karşılaştırır.
+ç) Düzlemde iki veya üç doğrunun birbirine göre durumuna bağlı olarak oluşan açılara
+   dair önerme sunar.
+d) Sunduğu önermelerin, doğruların oluşturduğu açıların incelenmesine yönelik
+   katkısına dair gerekçe sunar.
+```
+
+### MAT.5.3.5 süreç bileşenleri
+```
+a) Düzlemde en az üç doğrunun -son doğru ilk doğruyla kesişecek biçimde- ardışık
+   kesişerek oluşturdukları durumları inceler.
+b) Düzlemde en az üç doğrunun -son doğru ilk doğruyla kesişecek biçimde- ardışık
+   kesişimleri ile çeşitli çokgenler oluşturur.
+c) Çokgenlerin düzlemde en az üç doğrunun -son doğru ilk doğruyla kesişecek biçimde-
+   ardışık kesişimleri ile meydana geldiğini ifade eder.
+```
+
+### MAT.5.3.6 süreç bileşenleri
+```
+a) Çokgenlerin özellikleri ile ilgili edindiği deneyimleri gözden geçirir.
+b) Çokgenlerin kenar ve açı özelliklerine dair çıkarım yapar.
+c) Çıkarımını farklı örnekler üzerinden değerlendirir.
+```
+
+### MAT.5.3.7 süreç bileşenleri
+```
+a) İki noktada kesişen çember çiftinin merkezleri ve kesişim noktalarından biri ile
+   inşa edilebilecek üçgenlerin kenar özelliklerine yönelik varsayımlarda bulunur.
+b) Örnek çizimler üzerinden, kesişen iki çemberin merkezleri ve kesişim noktalarından
+   biri ile inşa edilen çeşitkenar, ikizkenar ve eşkenar üçgenleri belirler.
+c) Belirlediği üçgenlerin özelliklerini varsayımları ile karşılaştırır.
+ç) Varsayımlarını, inşa ettiği üçgenler ile karşılaştırarak doğrulayabileceği
+   önermeler şeklinde ifade eder.
+d) Sunduğu önermelerin katkısını değerlendirir.
+```
+
 ---
 
 ## MAT.5.4 — Geometrik Nicelikler
 
 | Kod | Öğrenme çıktısı |
 |---|---|
-| MAT.5.4.1 | Kenar uzunlukları doğal sayı olan bir dikdörtgenin çevre uzunluğu verildiğinde farklı alanlara sahip olabileceğini açıklayabilme |
+| MAT.5.4.1 | Kenar uzunlukları doğal sayı olan bir dikdörtgenin çevre uzunluğu verildiğinde kenar uzunluklarını yorumlayabilme |
 | MAT.5.4.2 | Birim karelerden yola çıkarak dikdörtgenin alanını değerlendirebilme |
-| MAT.5.4.3 | Kenar uzunlukları doğal sayı olan bir dikdörtgenin alanının ölçüsü verildiğinde farklı çevre uzunluklarına sahip olabileceğini ifade edebilme |
+| MAT.5.4.3 | Kenar uzunlukları doğal sayı olan bir dikdörtgenin alanının ölçüsü verildiğinde çevre uzunluğunu, çevre uzunluğu verildiğinde alanını yorumlayabilme |
 | MAT.5.4.4 | Dikdörtgenin çevre uzunluğu ve alanı ile ilgili problemleri çözebilme |
+
+> **Kaynak (2026-09-18 eklendi):** `~/Downloads/TYMM 5. Sınıf Matematik Öğrenme Çıktıları ve
+> Süreç Bileşenleri.pdf`, s.12 (Node.js `pdf-parse` ile çıkarıldı, `pdftotext` bu makinede yok).
+> Çıktı başlıkları bu kaynakla küçük farklarla teyit edildi (5.4.1 ve 5.4.3 başlığı önceki
+> özette kısaltılmıştı, burada PDF'teki tam ifadeyle düzeltildi).
+
+### MAT.5.4.1 süreç bileşenleri
+```
+a) Kenar uzunlukları doğal sayı olan bir dikdörtgenin çevre uzunluğu verildiğinde olası
+   kenar uzunluklarını inceler.
+b) Verilen çevre uzunluğuna sahip ve kenar uzunlukları doğal sayı olan dikdörtgen oluşturur.
+c) Kenar uzunlukları doğal sayı olan farklı dikdörtgenlerin aynı çevre uzunluğuna sahip
+   olabileceğini açıklar.
+```
+
+### MAT.5.4.2 süreç bileşenleri
+```
+a) Dikdörtgenin alanını ölçmede, seçtiği birim kareleri ölçüt olarak belirler.
+b) Dikdörtgenin alanını seçilen birim karelerle ölçer.
+c) Birim kare sayısının dikdörtgenin iki ardışık kenar uzunluğu ile ilişkisini inceler.
+ç) Dikdörtgenin alan bağıntısına (iki ardışık kenarın uzunlukları çarpımı) ilişkin yargıda
+   bulunur.
+```
+
+### MAT.5.4.3 süreç bileşenleri
+```
+a) Alanının ölçüsü verilen bir dikdörtgenin çevre uzunluğunu, çevre uzunluğu verilen bir
+   dikdörtgenin alanını inceler.
+b) Aynı alana sahip farklı dikdörtgenlerin çevre uzunluklarını ve aynı çevre uzunluğuna
+   sahip farklı dikdörtgenlerin alanlarını belirler.
+c) Aynı çevre uzunluğuna sahip dikdörtgenlerin farklı alanlara ve aynı alana sahip
+   dikdörtgenlerin farklı çevre uzunluklarına sahip olabileceğini ifade eder.
+```
+
+### MAT.5.4.4 süreç bileşenleri
+```
+a) Dikdörtgenin çevre uzunluğu ve alanı ile ilgili problemlerde ilgili matematiksel
+   bileşenleri (şekil, uzunluk, alan ölçüleri gibi) belirler.
+b) Matematiksel bileşenler arasındaki ilişkileri belirler.
+c) Problem bağlamındaki temsilleri farklı temsillere dönüştürür.
+ç) Matematiksel temsillere dönüştürdüğü problemi kendi ifadeleri ile açıklar.
+d) Problemin sonucuna ilişkin tahminde bulunur ve işlemleri gerçekleştirmek için
+   stratejiler geliştirir.
+e) Belirlediği stratejileri çözüm için uygular.
+f) Çözüm yollarını kontrol eder ve çözüme ulaştırmayan stratejiyi değiştirir.
+g) Problemin çözümü için kullandığı veya geliştirdiği stratejileri gözden geçirerek
+   alternatif çözüm yollarını değerlendirir.
+ğ) Kullandığı strateji veya stratejileri farklı problemlerin çözümlerine geneller.
+h) Genellemenin geçerliliğini matematiksel örneklerle değerlendirir.
+```
 
 ---
 
@@ -150,19 +285,60 @@ c) Dönüştürdüğü algoritmik yapının içerdiği matematiksel ilişkileri 
 | MAT.5.5.1 | Kategorik veri ile çalışabilme ve veriye dayalı karar verebilme |
 | MAT.5.5.2 | Başkaları tarafından oluşturulan kategorik veriye dayalı istatistiksel sonuç veya yorumları tartışabilme |
 
+> **Kaynak (2026-09-18 eklendi):** `tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/452` (resmî
+> MEB TYMM portalı).
+
+### MAT.5.5.1 süreç bileşenleri
+```
+a) Kategorik veriye dayanan istatistiksel araştırma gerektiren durumları fark eder.
+b) Kategorik veriye dayanan betimleme veya karşılaştırma gerektirebilecek araştırma
+   soruları oluşturur.
+c) Kategorik veriye ulaşmak için plan yapar.
+ç) Araştırma sorusuna uygun hazırlanan anket sorularını kullanarak veri toplar veya
+   hazır veriye ulaşır.
+d) Veri görselleştirme aracını (sıklık tablosu, sütun grafiği, daire grafiği, nokta
+   grafiği gibi) seçme gerekçelerini belirtir.
+e) Toplanan veriyi uygun araçlar ile analiz eder.
+f) Araştırmada ulaştığı sonuçlara yönelik gerekçeler sunar.
+g) Araştırma sonuçlarının araştırma sorusuna ne düzeyde cevap verdiğini
+   değerlendirerek araştırma sürecine uygun olmayan adımları yeniden planlar.
+```
+
+### MAT.5.5.2 süreç bileşenleri
+```
+a) Başkaları tarafından oluşturulan kategorik veriye dayalı istatistiksel sonuç veya
+   yorumlara yönelik istatistiksel temellendirme yapar.
+b) Başkaları tarafından oluşturulan kategorik veriye dayalı istatistiksel sonuç veya
+   yorumlara yönelik hataları ya da yanlılıkları tespit eder.
+c) Başkaları tarafından oluşturulan kategorik veriye dayalı sonuç veya yorumları
+   çürütür ya da kabul eder.
+```
+
 ---
 
 ## MAT.5.6 — Veriden Olasılığa
 
 | Kod | Öğrenme çıktısı |
 |---|---|
-| MAT.5.6.1 | Herhangi bir olayın olasılığının 0 (imkânsız) ile 1 (kesin) arasında (0 ve 1 dâhil) olduğunu yapılandırabilme |
+| MAT.5.6.1 | Herhangi bir olayın olasılığının 0 (imkânsız) ile 1 (kesin) arasında (0 ve 1 dâhil) olduğunu yorumlayabilme (olasılık spektrumu) |
 | MAT.5.6.2 | Olayları az ya da çok olasılıklı şeklinde yapılandırabilme |
 
-### MAT.5.6.2 süreç bileşenleri (kısmi)
+> **Kaynak (2026-09-18 eklendi, tam metin):** `tymm.meb.gov.tr/ortaokul-matematik-dersi/unite/455`
+> (resmî MEB TYMM portalı). Önceki özet MAT.5.6.2-b'yi yarım bırakmıştı, şimdi tam.
+
+### MAT.5.6.1 süreç bileşenleri
+```
+a) Olayları ve olası durumları inceler.
+b) Bir olayın olasılığına dair tahminlerini farklı sayı temsillerine dönüştürür.
+c) Kendi ifadeleriyle tahminde bulunduğu bir olayın olasılığının 0 ile 1 arasında
+   (0 ve 1 dâhil) olduğunu ifade eder.
+```
+
+### MAT.5.6.2 süreç bileşenleri
 ```
 a) Olayların olasılıklarına ilişkin nedensel veya mantıksal ilişkiler ortaya koyar.
-b) Kendi öz bilgisi ...
+b) Kendi öz bilgisi ile elde ettiği ilişkilere dayanarak olayların olasılıklarını az
+   veya çok olasılıklı şeklinde ortaya koyar.
 ```
 
 ---

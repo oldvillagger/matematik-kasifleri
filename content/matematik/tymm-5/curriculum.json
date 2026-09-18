@@ -1,0 +1,639 @@
+{
+  "subject": {
+    "slug": "matematik",
+    "title": "Matematik"
+  },
+  "course": {
+    "slug": "tymm-5",
+    "title": "TYMM 5. Sınıf",
+    "curriculumVersion": "TYMM-2025"
+  },
+  "themes": [
+    {
+      "code": "MAT.5.1",
+      "title": "Sayılar ve Nicelikler"
+    },
+    {
+      "code": "MAT.5.2",
+      "title": "İşlemlerle Cebirsel Düşünme"
+    },
+    {
+      "code": "MAT.5.3",
+      "title": "Geometrik Şekiller"
+    },
+    {
+      "code": "MAT.5.4",
+      "title": "Geometrik Nicelikler"
+    },
+    {
+      "code": "MAT.5.5",
+      "title": "İstatistiksel Araştırma Süreci"
+    },
+    {
+      "code": "MAT.5.6",
+      "title": "Veriden Olasılığa"
+    }
+  ],
+  "outcomes": [
+    {
+      "code": "MAT.5.1.1",
+      "themeCode": "MAT.5.1",
+      "title": "Altı basamaklı sayıları okuma ve yazmayı çok basamaklı sayılara genelleyebilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Günlük hayattaki farklı bağlamlardan yola çıkarak altıdan çok basamaklı sayılar hakkında bilgi toplar."
+        },
+        {
+          "code": "b",
+          "description": "Sayıların bölükleri ile okunuşları arasındaki ortak özellikleri belirler."
+        },
+        {
+          "code": "c",
+          "description": "Sayıların bölükleri ile okunuşları arasındaki farklılıkları belirler."
+        },
+        {
+          "code": "ç",
+          "description": "Sayıların bölükleri ile okunuşları arasındaki örüntüler üzerinden basamak sayısı altıdan çok olan sayıların okunuş ve yazılışları hakkında önermelerde bulunur."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.1.2",
+      "themeCode": "MAT.5.1",
+      "title": "Doğal sayılar ve işlemler içeren gerçek yaşam problemlerini çözebilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Problemin içerdiği sayı ve işlem bileşenlerini belirler."
+        },
+        {
+          "code": "b",
+          "description": "Problemde verilenler ile istenenlerin gerektirdiği işlemler arasındaki ilişkiyi belirler."
+        },
+        {
+          "code": "c",
+          "description": "Problem bağlamıyla ilişkili verilenleri uygun matematiksel temsillere dönüştürür."
+        },
+        {
+          "code": "ç",
+          "description": "Problemi matematiksel temsiller kullanarak kendi ifadeleri ile açıklar."
+        },
+        {
+          "code": "d",
+          "description": "Problemin sonucuna ilişkin tahminde bulunur ve işlemleri gerçekleştirmek için stratejiler geliştirir."
+        },
+        {
+          "code": "e",
+          "description": "Belirlenen strateji veya stratejileri çözüm için uygular."
+        },
+        {
+          "code": "f",
+          "description": "Çözüm yollarını kontrol eder ve çözüme ulaştırmayan stratejiyi değiştirir."
+        },
+        {
+          "code": "g",
+          "description": "Problemin çözümü için kullandığı veya geliştirdiği stratejileri gözden geçirerek kısa yolları değerlendirir."
+        },
+        {
+          "code": "ğ",
+          "description": "Kullandığı strateji veya stratejileri farklı problemlerin çözümlerine geneller."
+        },
+        {
+          "code": "h",
+          "description": "Genellemenin geçerliliğini matematiksel örneklerle değerlendirir."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.1.3",
+      "themeCode": "MAT.5.1",
+      "title": "Gerçek yaşam durumlarına karşılık gelen kesirleri farklı biçimlerde temsil edebilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Kesirlerin farklı gösterimlerinin (bileşik, tam sayılı, ondalık, yüzde) gerçek yaşam durumu içerisindeki kullanımını anlar."
+        },
+        {
+          "code": "b",
+          "description": "Gerçek yaşam durumlarında karşılaşılan kesirlerin farklı gösterimlerini ilişkilendirmek için farklı modelleri (yüzlük kart, somut modeller, sayı doğrusu gibi) seçer."
+        },
+        {
+          "code": "c",
+          "description": "Seçilen modelleri kullanır."
+        },
+        {
+          "code": "ç",
+          "description": "Kullanılan modelleri kesirlerin farklı gösterimleri ile yorumlar."
+        },
+        {
+          "code": "d",
+          "description": "Benzer durumlarda kullanılabilecek farklı modelleri kullanışlılık açısından karşılaştırır."
+        },
+        {
+          "code": "e",
+          "description": "Karşılaştırdığı modellerin kullanışlılığına ilişkin karar verir."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.1.4",
+      "themeCode": "MAT.5.1",
+      "title": "Farklı gösterimlerle ifade edilen kesirlerin karşılaştırılmasına yönelik çıkarım yapabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Farklı gösterimlerle ifade edilen kesirlerin karşılaştırılmasına yönelik varsayımda bulunur."
+        },
+        {
+          "code": "b",
+          "description": "Varsayımındaki ilişkileri inceleyerek kesirlerin karşılaştırılmasına yönelik genellemeleri belirler."
+        },
+        {
+          "code": "c",
+          "description": "Elde ettiği genellemelerin varsayımını karşılayıp karşılamadığını sayı doğrusu, şekil gibi temsiller üzerinde gösterir."
+        },
+        {
+          "code": "ç",
+          "description": "Varsayımı ile ilgili ulaştığı sonuca yönelik matematiksel önermeleri sözel ya da sembolik temsil ile sunar."
+        },
+        {
+          "code": "d",
+          "description": "Sunduğu önermelerin tahmin etme becerisine katkısını gerekçelerle açıklar."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.2.1",
+      "themeCode": "MAT.5.2",
+      "title": "Eşitliğin korunumuna ve işlem özelliklerine yönelik çıkarım yapabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Eşitliğin korunumuna, doğal sayılarla toplama ve çarpma işlemlerinin değişme, birleşme; çarpmanın toplama ve çıkarma işlemleri üzerine dağılma özelliklerine yönelik varsayımlarda bulunur."
+        },
+        {
+          "code": "b",
+          "description": "İncelediği örnekler üzerinden varsayımına yönelik genellemeleri belirler."
+        },
+        {
+          "code": "c",
+          "description": "Elde ettiği genellemelerin varsayımını karşılayıp karşılamadığını çeşitli örnekler üzerinden sınar."
+        },
+        {
+          "code": "ç",
+          "description": "Varsayımı ile ilgili ulaştığı sonuca yönelik doğrulayabileceği matematiksel bir önermeyi sözel ve sembolik temsil ile sunar."
+        },
+        {
+          "code": "d",
+          "description": "Sunduğu önermenin katkısına yönelik gerekçe sunar."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.2.2",
+      "themeCode": "MAT.5.2",
+      "title": "Karşılaştığı günlük hayat ya da matematiksel durumlarda işlem önceliğini yorumlayabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Doğal sayılarla dört işlem içeren problemlerde ve sayı cümlelerinde işlem önceliğini inceler."
+        },
+        {
+          "code": "b",
+          "description": "Karşılaştığı doğal sayılarla dört işlem içeren problemlerde ve sayı cümlelerinde işlem önceliğini uygular."
+        },
+        {
+          "code": "c",
+          "description": "Karşılaştığı durumlarda işlem önceliğini açıklar."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.2.3",
+      "themeCode": "MAT.5.2",
+      "title": "Sayı ve şekil örüntülerinin kuralına ilişkin muhakeme yapabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Örüntülerdeki ilişkilere yönelik varsayımda bulunur."
+        },
+        {
+          "code": "b",
+          "description": "Varsayıma yönelik örüntüdeki terimleri inceleyerek örüntünün kuralına ilişkin genellemeleri belirler."
+        },
+        {
+          "code": "c",
+          "description": "Genellediği ilişkilerin varsayımını karşılayıp karşılamadığını sınar."
+        },
+        {
+          "code": "ç",
+          "description": "Varsayımı ile ilgili ulaştığı sonuca yönelik doğrulayabileceği önermeyi sözel ve sembolik temsiller kullanarak sunar."
+        },
+        {
+          "code": "d",
+          "description": "Sunduğu önermenin kullanışlılığına yönelik gerekçeler sunar."
+        },
+        {
+          "code": "e",
+          "description": "Sunduğu önermenin geçerliliğini destekleyen kapsayıcı örnekler verir."
+        },
+        {
+          "code": "f",
+          "description": "İşe koştuğu doğrulamanın benzer önermelere uygulanıp uygulanamayacağını değerlendirir."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.2.4",
+      "themeCode": "MAT.5.2",
+      "title": "Temel aritmetik işlem içeren durumlardaki algoritmaları yorumlayabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Temel aritmetik işlem içeren durumlardaki algoritmik yapıyı inceler."
+        },
+        {
+          "code": "b",
+          "description": "İncelediği durumlardaki algoritmik yapıyı tablo temsiline veya aritmetik işlemlere dönüştürür."
+        },
+        {
+          "code": "c",
+          "description": "Dönüştürdüğü algoritmik yapının içerdiği matematiksel ilişkileri sözlü olarak ifade eder."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.3.1",
+      "themeCode": "MAT.5.3",
+      "title": "Temel geometrik çizimler için matematiksel araç ve teknolojiden yararlanabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Nokta, doğru, doğru parçası, ışın, açı, çember ve dikme çiziminde gerekli araç ve teknolojileri tanır."
+        },
+        {
+          "code": "b",
+          "description": "Nokta, doğru, doğru parçası, ışın, açı, çember ve dikmeyi oluşturmak için uygun olan araç ve teknolojileri belirler."
+        },
+        {
+          "code": "c",
+          "description": "Nokta, doğru, doğru parçası, ışın, açı, çember ve dikmeyi oluşturmak için uygun araç ve teknolojileri kullanır."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.3.2",
+      "themeCode": "MAT.5.3",
+      "title": "Temel geometrik çizimlere dayalı deneyimlerini yansıtabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Temel geometrik çizimlere dayalı deneyimlerini gözden geçirir."
+        },
+        {
+          "code": "b",
+          "description": "Temel geometrik çizimlerin özelliklerine yönelik çıkarım yapar."
+        },
+        {
+          "code": "c",
+          "description": "Çıkarımını farklı örnekler üzerinden değerlendirir."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.3.3",
+      "themeCode": "MAT.5.3",
+      "title": "Açıları ölçmek için matematiksel araç ve teknolojiden yararlanabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Açı ölçmek için gerekli araç ve teknolojiyi tanır."
+        },
+        {
+          "code": "b",
+          "description": "Açı ölçmek için uygun araç ve teknolojiyi belirler."
+        },
+        {
+          "code": "c",
+          "description": "Açı ölçmek için uygun araç ve teknolojiyi kullanır."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.3.4",
+      "themeCode": "MAT.5.3",
+      "title": "Düzlemde iki veya üç doğrunun birbirine göre durumuna bağlı olarak oluşabilecek açılara dair çıkarım yapabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Düzlemde iki veya üç doğrunun birbirine göre durumuna bağlı olarak oluşabilecek açılara dair varsayımlarda bulunur."
+        },
+        {
+          "code": "b",
+          "description": "Düzlemde iki veya üç doğrunun birbirine göre durumuna bağlı olarak oluşan açıları belirleyerek listeler."
+        },
+        {
+          "code": "c",
+          "description": "Belirlediği açıları varsayımlarıyla karşılaştırır."
+        },
+        {
+          "code": "ç",
+          "description": "Düzlemde iki veya üç doğrunun birbirine göre durumuna bağlı olarak oluşan açılara dair önerme sunar."
+        },
+        {
+          "code": "d",
+          "description": "Sunduğu önermelerin, doğruların oluşturduğu açıların incelenmesine yönelik katkısına dair gerekçe sunar."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.3.5",
+      "themeCode": "MAT.5.3",
+      "title": "Çokgenleri düzlemde ardışık olarak kesişen doğruların oluşturduğu kapalı şekiller olarak yorumlayabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Düzlemde en az üç doğrunun -son doğru ilk doğruyla kesişecek biçimde- ardışık kesişerek oluşturdukları durumları inceler."
+        },
+        {
+          "code": "b",
+          "description": "Düzlemde en az üç doğrunun -son doğru ilk doğruyla kesişecek biçimde- ardışık kesişimleri ile çeşitli çokgenler oluşturur."
+        },
+        {
+          "code": "c",
+          "description": "Çokgenlerin düzlemde en az üç doğrunun -son doğru ilk doğruyla kesişecek biçimde- ardışık kesişimleri ile meydana geldiğini ifade eder."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.3.6",
+      "themeCode": "MAT.5.3",
+      "title": "Çokgenlerin özellikleri ile ilgili edindiği deneyimleri yansıtabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Çokgenlerin özellikleri ile ilgili edindiği deneyimleri gözden geçirir."
+        },
+        {
+          "code": "b",
+          "description": "Çokgenlerin kenar ve açı özelliklerine dair çıkarım yapar."
+        },
+        {
+          "code": "c",
+          "description": "Çıkarımını farklı örnekler üzerinden değerlendirir."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.3.7",
+      "themeCode": "MAT.5.3",
+      "title": "Matematiksel araç ve teknoloji yardımıyla düzlemde iki noktada kesişen çember çiftinin merkezleri ve kesişim noktalarından biri ile inşa edilen üçgenlerin kenar özelliklerine yönelik çıkarım yapabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "İki noktada kesişen çember çiftinin merkezleri ve kesişim noktalarından biri ile inşa edilebilecek üçgenlerin kenar özelliklerine yönelik varsayımlarda bulunur."
+        },
+        {
+          "code": "b",
+          "description": "Örnek çizimler üzerinden, kesişen iki çemberin merkezleri ve kesişim noktalarından biri ile inşa edilen çeşitkenar, ikizkenar ve eşkenar üçgenleri belirler."
+        },
+        {
+          "code": "c",
+          "description": "Belirlediği üçgenlerin özelliklerini varsayımları ile karşılaştırır."
+        },
+        {
+          "code": "ç",
+          "description": "Varsayımlarını, inşa ettiği üçgenler ile karşılaştırarak doğrulayabileceği önermeler şeklinde ifade eder."
+        },
+        {
+          "code": "d",
+          "description": "Sunduğu önermelerin katkısını değerlendirir."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.4.1",
+      "themeCode": "MAT.5.4",
+      "title": "Kenar uzunlukları doğal sayı olan bir dikdörtgenin çevre uzunluğu verildiğinde kenar uzunluklarını yorumlayabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Kenar uzunlukları doğal sayı olan bir dikdörtgenin çevre uzunluğu verildiğinde olası kenar uzunluklarını inceler."
+        },
+        {
+          "code": "b",
+          "description": "Verilen çevre uzunluğuna sahip ve kenar uzunlukları doğal sayı olan dikdörtgen oluşturur."
+        },
+        {
+          "code": "c",
+          "description": "Kenar uzunlukları doğal sayı olan farklı dikdörtgenlerin aynı çevre uzunluğuna sahip olabileceğini açıklar."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.4.2",
+      "themeCode": "MAT.5.4",
+      "title": "Birim karelerden yola çıkarak dikdörtgenin alanını değerlendirebilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Dikdörtgenin alanını ölçmede, seçtiği birim kareleri ölçüt olarak belirler."
+        },
+        {
+          "code": "b",
+          "description": "Dikdörtgenin alanını seçilen birim karelerle ölçer."
+        },
+        {
+          "code": "c",
+          "description": "Birim kare sayısının dikdörtgenin iki ardışık kenar uzunluğu ile ilişkisini inceler."
+        },
+        {
+          "code": "ç",
+          "description": "Dikdörtgenin alan bağıntısına (iki ardışık kenarın uzunlukları çarpımı) ilişkin yargıda bulunur."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.4.3",
+      "themeCode": "MAT.5.4",
+      "title": "Kenar uzunlukları doğal sayı olan bir dikdörtgenin alanının ölçüsü verildiğinde çevre uzunluğunu, çevre uzunluğu verildiğinde alanını yorumlayabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Alanının ölçüsü verilen bir dikdörtgenin çevre uzunluğunu, çevre uzunluğu verilen bir dikdörtgenin alanını inceler."
+        },
+        {
+          "code": "b",
+          "description": "Aynı alana sahip farklı dikdörtgenlerin çevre uzunluklarını ve aynı çevre uzunluğuna sahip farklı dikdörtgenlerin alanlarını belirler."
+        },
+        {
+          "code": "c",
+          "description": "Aynı çevre uzunluğuna sahip dikdörtgenlerin farklı alanlara ve aynı alana sahip dikdörtgenlerin farklı çevre uzunluklarına sahip olabileceğini ifade eder."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.4.4",
+      "themeCode": "MAT.5.4",
+      "title": "Dikdörtgenin çevre uzunluğu ve alanı ile ilgili problemleri çözebilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Dikdörtgenin çevre uzunluğu ve alanı ile ilgili problemlerde ilgili matematiksel bileşenleri (şekil, uzunluk, alan ölçüleri gibi) belirler."
+        },
+        {
+          "code": "b",
+          "description": "Matematiksel bileşenler arasındaki ilişkileri belirler."
+        },
+        {
+          "code": "c",
+          "description": "Problem bağlamındaki temsilleri farklı temsillere dönüştürür."
+        },
+        {
+          "code": "ç",
+          "description": "Matematiksel temsillere dönüştürdüğü problemi kendi ifadeleri ile açıklar."
+        },
+        {
+          "code": "d",
+          "description": "Problemin sonucuna ilişkin tahminde bulunur ve işlemleri gerçekleştirmek için stratejiler geliştirir."
+        },
+        {
+          "code": "e",
+          "description": "Belirlediği stratejileri çözüm için uygular."
+        },
+        {
+          "code": "f",
+          "description": "Çözüm yollarını kontrol eder ve çözüme ulaştırmayan stratejiyi değiştirir."
+        },
+        {
+          "code": "g",
+          "description": "Problemin çözümü için kullandığı veya geliştirdiği stratejileri gözden geçirerek alternatif çözüm yollarını değerlendirir."
+        },
+        {
+          "code": "ğ",
+          "description": "Kullandığı strateji veya stratejileri farklı problemlerin çözümlerine geneller."
+        },
+        {
+          "code": "h",
+          "description": "Genellemenin geçerliliğini matematiksel örneklerle değerlendirir."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.5.1",
+      "themeCode": "MAT.5.5",
+      "title": "Kategorik veri ile çalışabilme ve veriye dayalı karar verebilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Kategorik veriye dayanan istatistiksel araştırma gerektiren durumları fark eder."
+        },
+        {
+          "code": "b",
+          "description": "Kategorik veriye dayanan betimleme veya karşılaştırma gerektirebilecek araştırma soruları oluşturur."
+        },
+        {
+          "code": "c",
+          "description": "Kategorik veriye ulaşmak için plan yapar."
+        },
+        {
+          "code": "ç",
+          "description": "Araştırma sorusuna uygun hazırlanan anket sorularını kullanarak veri toplar veya hazır veriye ulaşır."
+        },
+        {
+          "code": "d",
+          "description": "Veri görselleştirme aracını (sıklık tablosu, sütun grafiği, daire grafiği, nokta grafiği gibi) seçme gerekçelerini belirtir."
+        },
+        {
+          "code": "e",
+          "description": "Toplanan veriyi uygun araçlar ile analiz eder."
+        },
+        {
+          "code": "f",
+          "description": "Araştırmada ulaştığı sonuçlara yönelik gerekçeler sunar."
+        },
+        {
+          "code": "g",
+          "description": "Araştırma sonuçlarının araştırma sorusuna ne düzeyde cevap verdiğini değerlendirerek araştırma sürecine uygun olmayan adımları yeniden planlar."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.5.2",
+      "themeCode": "MAT.5.5",
+      "title": "Başkaları tarafından oluşturulan kategorik veriye dayalı istatistiksel sonuç veya yorumları tartışabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Başkaları tarafından oluşturulan kategorik veriye dayalı istatistiksel sonuç veya yorumlara yönelik istatistiksel temellendirme yapar."
+        },
+        {
+          "code": "b",
+          "description": "Başkaları tarafından oluşturulan kategorik veriye dayalı istatistiksel sonuç veya yorumlara yönelik hataları ya da yanlılıkları tespit eder."
+        },
+        {
+          "code": "c",
+          "description": "Başkaları tarafından oluşturulan kategorik veriye dayalı sonuç veya yorumları çürütür ya da kabul eder."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.6.1",
+      "themeCode": "MAT.5.6",
+      "title": "Herhangi bir olayın olasılığının 0 (imkânsız) ile 1 (kesin) arasında (0 ve 1 dâhil) olduğunu yorumlayabilme (olasılık spektrumu)",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Olayları ve olası durumları inceler."
+        },
+        {
+          "code": "b",
+          "description": "Bir olayın olasılığına dair tahminlerini farklı sayı temsillerine dönüştürür."
+        },
+        {
+          "code": "c",
+          "description": "Kendi ifadeleriyle tahminde bulunduğu bir olayın olasılığının 0 ile 1 arasında (0 ve 1 dâhil) olduğunu ifade eder."
+        }
+      ],
+      "componentsSourced": true
+    },
+    {
+      "code": "MAT.5.6.2",
+      "themeCode": "MAT.5.6",
+      "title": "Olayları az ya da çok olasılıklı şeklinde yapılandırabilme",
+      "processComponents": [
+        {
+          "code": "a",
+          "description": "Olayların olasılıklarına ilişkin nedensel veya mantıksal ilişkiler ortaya koyar."
+        },
+        {
+          "code": "b",
+          "description": "Kendi öz bilgisi ile elde ettiği ilişkilere dayanarak olayların olasılıklarını az veya çok olasılıklı şeklinde ortaya koyar."
+        }
+      ],
+      "componentsSourced": true
+    }
+  ]
+}

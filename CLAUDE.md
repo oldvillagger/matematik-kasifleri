@@ -164,6 +164,10 @@ böylece Stitch markup'ı doğrudan taşınabiliyor. İkonlar Material Symbols O
   yazılmış `admin.css` kullanıyor, ona dokunulmadı.
 - **Test komutu:** `pnpm -r test` şu an paketleri doğru bulamıyor (bilinen aksaklık);
   paket paket çalıştır: `pnpm --filter @matematik-kasifleri/<paket> test`.
+- **Dev sunucu açıkken `pnpm build` çalıştırma.** İkisi de `apps/web/.next` klasörünü
+  kullanıyor; production derlemesi çalışan dev sunucunun chunk'larını eziyor ve tarayıcıda
+  `Cannot find module './713.js'` hatası çıkıyor. Kodda sorun yok — dev sunucuyu durdur,
+  `rm -rf apps/web/.next`, yeniden başlat.
 - **Dil:** Kod ve teknik yorumlar İngilizce; dokümanlar, içerik ve kullanıcıya görünen her
   metin Türkçe. Çocuğa görünen metinlerde kaygı kelimeleri yok ("sınav", "yanlış",
   "başarısız", "kaybettin" → "usta görevi", "bu sefer olmadı", "tekrar bak").

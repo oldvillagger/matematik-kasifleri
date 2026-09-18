@@ -18,8 +18,11 @@ TYMM 5. sınıf matematik bu platformun ilk doldurulmuş kursu. Yeni ders/konu e
 gerektirmemeli; bu yüzden içerik yönetimi için bir **admin panel** (`apps/studio`) mimarisi de
 baştan tasarlanıyor, önceliği Faz 2'den öne çekildi.
 
-**Durum:** Planlama tamamlandı, kod henüz yazılmadı. Sıradaki iş Faz 0 / Sprint S0.1
-(monorepo iskeleti kısmen kuruldu — bkz. `agents-notes/00-oturum-gunlugu.md` Oturum 002).
+**Durum (2026-09-18 güncellendi):** Faz 0 hızlandırıldı — kullanıcı "2 aylık proje değil, en
+kısa zamanda çalışır hâli bitsin" dedi. **4 konu uçtan uca oynanabilir durumda:**
+MAT.5.2.1 (Yankı Kapısı), MAT.5.2.3 (Örüntü Anahtarı), MAT.5.4.1 + MAT.5.4.2 (Harita Kâşifi).
+A1→A2→A3→Assessment tam döngü çalışıyor, `pnpm build` temiz. Detay:
+`agents-notes/00-oturum-gunlugu.md` Oturum 002 devam 4.
 
 ---
 
@@ -79,28 +82,43 @@ Bu proje, "oyun oynarsın, arada soru çıkar" kalıbından kaçınmak için var
 ## Mimari — kritik sınır
 
 ```
-packages/engine-core/   ⭐ saf TypeScript. React YOK, DOM YOK, ağ YOK.
-                           CRA aşama makinesi, destek azaltma, kanıt üretimi.
-                           Bu paket başka platformlara taşınacak — bağımlılık ekleme.
-packages/curriculum/    TYMM verisi (23 çıktı, süreç bileşenleri). Bağımlılığı yok.
-packages/content-schema/Zod şemaları. Kırmızı çizgiler burada CI'da zorlanır.
-packages/manipulatives/ React bileşenleri: terazi, birim kare ızgarası, pergel, açıölçer.
-apps/web/               Next.js 15 kabuk.
-content/mat-5/          Görevler JSON olarak — kod değil.
+packages/engine-core/   ⭐ saf TypeScript. React YOK, DOM YOK, ağ YOK. VAR (2026-09-18).
+                           cra-machine + support-policy + evidence, testli (9 test).
+packages/curriculum/    TYMM verisi (23 çıktı, süreç bileşenleri). JSON tabanlı yükleyici. VAR.
+packages/content-schema/Zod şemaları (task.ts) + loader.ts. Kırmızı çizgiler burada zorlanır. VAR.
+packages/manipulatives/ React: BalanceGame ("Yankı Kapısı"), GridGame ("Harita Kâşifi"),
+                           PatternGame ("Örüntü Anahtarı"). VAR (2026-09-18).
+packages/ui-kit/        Paylaşılan tasarım tokenları (bkz. §Görsel kimlik altta). VAR.
+apps/web/               Next.js 15 — TEK uygulama. `/` `/[subject]` `/[subject]/[outcome]`
+                           (öğrenci) + `/admin/...` (içerik masası, eski apps/studio —
+                           2026-09-18'de buraya taşındı, ayrı app yok artık).
+content/matematik/tymm-5/tasks/  4 konunun görev JSON'u (MAT.5.2.1, 5.2.3, 5.4.1, 5.4.2).
 ```
 
 **`engine-core` içine React, DOM API'si veya ağ çağrısı eklemek mimariyi bozar.** Bu paketin
 saf kalması, motorun staj yerinin platformuna gömülebilmesinin tek sebebi.
 
 **Yeni görev eklemek kod yazmayı gerektirmez** — `content/` altına JSON eklenir,
-`pnpm content:lint` doğrular.
+`content-schema`'nın `TaskSchema`/`AssessmentSchema`'sı (ve `loadLesson`) doğrular. **Not:**
+ayrı bir `pnpm content:lint` CLI komutu henüz yazılmadı — şema zaten var ve `loadLesson` her
+görevi parse ederken zorluyor (uyumsuz JSON atılırsa throw eder), CLI sarmalayıcı ilerideki iş.
 
 ---
 
+## Görsel kimlik
+
+Renk paleti ve tipografi (`packages/ui-kit/src/tokens.css`) kullanıcının verdiği Stitch
+tasarımından ("Vibrant Junior Learn" — mor/camgöbeği/zümrüt/amber, Plus Jakarta Sans, pilli
+butonlar) referans alındı. **Bilinçli olarak alınmayanlar** (kırmızı çizgilerle çelişiyor,
+kullanıcıya soruldu, henüz cevap yok): "+50 Puan" tarzı puan rozetleri, seri (streak) sayaçları,
+A/B/C/D sınav-navigator ızgarası. Bu üçü uygulanmadı. Detay: `00-oturum-gunlugu.md` Oturum 002
+devam 4.
+
 ## Çalışma kuralları
 
-- **Yığın:** TypeScript (strict) · Next.js 15 · React 19 · Tailwind 4 · PostgreSQL + Prisma ·
-  pnpm + Turborepo · Vitest + Playwright
+- **Yığın:** TypeScript (strict) · Next.js 15 · React 19 · Framer Motion · Zod · pnpm +
+  Turborepo · Vitest. (Tailwind/Prisma/Postgres henüz kullanılmadı — Faz 0 localStorage
+  yeterli kararına göre; CSS elle, `packages/ui-kit` tokenlarıyla yazılıyor.)
 - **Dil:** Kod ve teknik yorumlar İngilizce; dokümanlar, içerik ve kullanıcıya görünen her
   metin Türkçe. Çocuğa görünen metinlerde kaygı kelimeleri yok ("sınav", "yanlış",
   "başarısız", "kaybettin" → "usta görevi", "bu sefer olmadı", "tekrar bak").

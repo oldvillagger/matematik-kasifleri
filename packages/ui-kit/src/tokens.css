@@ -1,71 +1,107 @@
 /*
- * Matematik Kâşifleri — design tokens
+ * Matematik Kâşifleri — design tokens (v2, 2026-09-18)
  *
- * Direction: "kâşif günlüğü" (explorer's field journal) — cartography, ink,
- * brass instruments, aged expedition paper. Grounded in the product's own
- * name and lore (agents-notes/04-oyun-tasarimi.md), not a generic palette.
- * Deliberately NOT the cream+terracotta AI-default: warmer/more khaki paper,
- * no orange accent — pine green + brass + muted map-blue instead.
- *
- * Two surfaces share these tokens with different intensity:
- *   apps/web    — warmer, more illustrated, generous space (10-11 yaş kâşif)
- *   apps/studio — same palette, denser/cooler application (içerik masası)
- *
- * Fonts: Fraunces (display, literary/journal character) + Karla (body,
- * warm humanist sans). JetBrains Mono ONLY for curriculum codes
- * (MAT.5.2.1) — those are genuinely codes, not decoration.
+ * Palette/type reference: Stitch "Vibrant Junior Learn" design system,
+ * provided by the user (stitch_ilkogretim_etkilesimli_ogrenme_portali.zip).
+ * Adopted: violet/cyan/emerald/amber palette, Plus Jakarta Sans, pill
+ * shapes, tactile elevation. Deliberately NOT adopted (conflicts with
+ * CLAUDE.md red lines — flagged to user, not silently dropped):
+ *   - point/score badges ("+50 Puan") — A1 rule forbids score display
+ *   - streak counters — explicitly forbidden
+ *   - exam question-navigator grid (A/B/C/D matrix) — Assessment must not
+ *     look like "yabancı bir sınav ekranı" (03-pedagojik-mimari.md)
  */
 
 :root {
-  --ink: #2b2a1f;
-  --paper: #ece3cc;
-  --paper-raised: #f5eeda;
-  --pine: #2f5d50;
-  --pine-strong: #204039;
-  --brass: #a8752f;
-  --ink-blue: #35566b;
-  --coral: #b1473c;
-  --border: rgba(43, 42, 31, 0.18);
-  --border-strong: rgba(43, 42, 31, 0.32);
+  --ink: #0b1c30;
+  --ink-muted: #4a4455;
+  --paper: #f8f9ff;
+  --paper-raised: #ffffff;
+  --paper-sunken: #eff4ff;
 
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
-  --font-body: "Karla", -apple-system, "Segoe UI", sans-serif;
+  --primary: #7c3aed;
+  --primary-strong: #6d28d9;
+  --primary-tint: #f5f3ff;
+  --secondary: #0284c7;
+  --secondary-tint: #e0f6fd;
+  --success: #10b981;
+  --success-tint: #e7faf3;
+  --accent: #f97316;
+  --accent-tint: #fff2e6;
+  --danger: #ef4444;
+
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+
+  --font-display: "Plus Jakarta Sans", -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Plus Jakarta Sans", -apple-system, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "Courier New", monospace;
 
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 16px;
-  --space-4: 24px;
-  --space-5: 40px;
-  --space-6: 64px;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --space-1: 0.375rem;
+  --space-2: 0.75rem;
+  --space-3: 1.25rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+
+  --shadow-card: 0 4px 14px -2px rgba(124, 58, 237, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  --shadow-lift: 0 10px 20px -3px rgba(124, 58, 237, 0.22);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ink: #ede6d2;
-    --paper: #182420;
-    --paper-raised: #202e29;
-    --pine: #6fbfa8;
-    --pine-strong: #8fd6c0;
-    --brass: #d9a94f;
-    --ink-blue: #7fa8c4;
-    --coral: #d97b70;
-    --border: rgba(237, 230, 210, 0.16);
-    --border-strong: rgba(237, 230, 210, 0.3);
+    --ink: #eaf1ff;
+    --ink-muted: #b7c3d9;
+    --paper: #0b1220;
+    --paper-raised: #161f30;
+    --paper-sunken: #101827;
+
+    --primary: #a78bfa;
+    --primary-strong: #c4b5fd;
+    --primary-tint: #241b3d;
+    --secondary: #38bdf8;
+    --secondary-tint: #0d2a35;
+    --success: #34d399;
+    --success-tint: #0d2a20;
+    --accent: #fb923c;
+    --accent-tint: #2c1d0f;
+    --danger: #f87171;
+
+    --border: #263041;
+    --border-strong: #34405a;
+
+    --shadow-card: 0 4px 14px -2px rgba(0, 0, 0, 0.35);
+    --shadow-lift: 0 10px 24px -3px rgba(0, 0, 0, 0.45);
   }
 }
 
 :root[data-theme="dark"] {
-  --ink: #ede6d2;
-  --paper: #182420;
-  --paper-raised: #202e29;
-  --pine: #6fbfa8;
-  --pine-strong: #8fd6c0;
-  --brass: #d9a94f;
-  --ink-blue: #7fa8c4;
-  --coral: #d97b70;
-  --border: rgba(237, 230, 210, 0.16);
-  --border-strong: rgba(237, 230, 210, 0.3);
+  --ink: #eaf1ff;
+  --ink-muted: #b7c3d9;
+  --paper: #0b1220;
+  --paper-raised: #161f30;
+  --paper-sunken: #101827;
+
+  --primary: #a78bfa;
+  --primary-strong: #c4b5fd;
+  --primary-tint: #241b3d;
+  --secondary: #38bdf8;
+  --secondary-tint: #0d2a35;
+  --success: #34d399;
+  --success-tint: #0d2a20;
+  --accent: #fb923c;
+  --accent-tint: #2c1d0f;
+  --danger: #f87171;
+
+  --border: #263041;
+  --border-strong: #34405a;
+
+  --shadow-card: 0 4px 14px -2px rgba(0, 0, 0, 0.35);
+  --shadow-lift: 0 10px 24px -3px rgba(0, 0, 0, 0.45);
 }

@@ -26,7 +26,6 @@ export async function saveOutcome(
   while (formData.has(`component-code-${index}`)) {
     const code = String(formData.get(`component-code-${index}`) ?? "").trim();
     const description = String(formData.get(`component-desc-${index}`) ?? "").trim();
-    // Boş açıklama = bileşen kaldırılıyor demek (kaydetmeden önce boşalt).
     if (code.length > 0 && description.length > 0) {
       components.push({ code, description });
     }
@@ -36,7 +35,7 @@ export async function saveOutcome(
   outcome.componentsSourced = components.length > 0;
 
   saveCourse(doc);
-  revalidatePath(`/${subject}/${course}`);
-  revalidatePath(`/${subject}/${course}/${outcomeCode}`);
-  redirect(`/${subject}/${course}/${outcomeCode}`);
+  revalidatePath(`/admin/${subject}/${course}`);
+  revalidatePath(`/admin/${subject}/${course}/${outcomeCode}`);
+  redirect(`/admin/${subject}/${course}/${outcomeCode}`);
 }

@@ -253,3 +253,67 @@ düzenlenebilir gösterilmesi istendi — **arayüz/tema yok, sadece iskelet** (
    karar daha somut tartışılabilir).
 2. `content-schema` + `engine-core` — yukarıdaki gibi.
 3. İstenirse `git init` + ilk commit.
+
+---
+
+## Oturum 002 — devam 4: Hız modu — 4 konu uçtan uca oynanabilir
+
+Kullanıcı yön değiştirdi: "Bu 2 aylık bir proje değil, en kısa zamanda çalışır hâli bitmeli."
+Derin düşünüp hızlı kurmak istedi, kararları bana bıraktı ("sırasını zaten biliyorsun, şimdilik
+4 konu seç"). Aynı oturumda ayrıca bir Stitch tasarım referansı (zip olarak proje köküne
+yüklendi: `stitch_i_lk_retim_etkile_imli_renme_portal.zip`) verildi, arayüzde referans
+alınması istendi.
+
+### Verilen kararlar (K13 — hız modu paketi)
+
+| # | Karar | Gerekçe |
+|---|---|---|
+| K13a | 4 konu seçildi: **MAT.5.2.1** (Yankı Kapısı), **MAT.5.2.3** (Örüntü Anahtarı), **MAT.5.4.2** (Harita Kâşifi — alan), **MAT.5.4.1** (Harita Kâşifi — çevre, aynı motoru paylaşır) | Sadece 3 manipülatif ile 4 konu kapsanır — "manipülatifler yeniden kullanılır" ilkesi (`04-oyun-tasarimi.md` §16) |
+| K13b | "3D animasyon" isteği **tam WebGL/Three.js değil**, CSS 3D transform + Framer Motion spring fiziğiyle karşılandı | Düşük-orta Android tablet performans bütçesi (`05-teknik-mimari.md` §8) ve erişilebilirlik (klavye/dokunma alternatifi) WebGL ile ciddi risk altına girerdi |
+| K13c | `apps/studio` **silindi**, işlevi `apps/web/app/admin/*` altına taşındı — artık tek Next.js uygulaması, admin `/admin` path'inde | Kullanıcı: "admin sayfasını kök-url/admin'e aktar" — ayrı port/app yerine tek domain |
+| K13d | Görsel kimlik **Stitch "Vibrant Junior Learn" tasarımına göre değiştirildi** (mor/camgöbeği/zümrüt/amber, Plus Jakarta Sans) — önceki "Kâşif Günlüğü" parşömen paleti bırakıldı | Kullanıcı: "renkli modern bir web arayüzü görmek istiyorum" + doğrudan referans verdi |
+| K13e | Stitch tasarımının **3 öğesi bilinçli olarak alınmadı**: puan rozetleri ("+50 Puan"), seri sayaçları, sınav-navigator (A/B/C/D) ızgarası | CLAUDE.md kırmızı çizgileriyle doğrudan çelişiyor (A1 puan yasağı, streak yasağı, "yabancı sınav ekranı" yasağı). Kullanıcıya soruldu, cevap bekleniyor — bkz. açık sorular. |
+| K13f | `claude mcp add stitch ...` komutu **çalıştırılmadı** — API anahtarı içeriyordu, güvenlik kuralı gereği API anahtarları hiçbir alana girilmez | Kullanıcıya kendi terminalinde çalıştırması söylendi; sonra kullanıcı API'ye gerek kalmadığını söyleyip tasarımı zip olarak yükledi |
+
+### Yapılanlar (tek oturumda, sırayla)
+
+1. **`packages/engine-core`** — `cra-machine.ts`, `support-policy.ts`, `evidence.ts`, gerçek ve
+   testli (9 vitest testi, hepsi geçiyor). Pedagojik politika (`03-pedagojik-mimari.md` §2)
+   birebir kod: tek ipucu veya 2 ardışık hata → support +0.25; 3 ardışık doğru (ipucusuz,
+   ilk deneme) → support -0.25.
+2. **`packages/content-schema`** — Zod tabanlı `TaskSchema` (balance/grid/pattern discriminated
+   union), `AssessmentSchema` (min. 8 soru, K12), `loadLesson`/`hasLesson` (dosyadan okuyup
+   doğrulayan yükleyici). A1/A3/ASSESSMENT'te `hints` boş zorlanıyor; `timeLimit` alanı şemada
+   hiç yok. 9 vitest testi geçiyor (4 tanesi 4 konunun gerçek JSON'unu parse edip doğruluyor).
+3. **4 konunun gerçek görev içeriği** yazıldı: her biri A1 (4 görev) + A2 (4, destek azaltmalı)
+   + A3 (4, süresiz/ipucusuz) + Assessment (8 soru) — toplam ~80 görev, hepsi
+   `content/matematik/tymm-5/tasks/*.json`, şemaya karşı doğrulandı.
+4. **`packages/manipulatives`** — 3 React bileşeni (`BalanceGame`, `GridGame`, `PatternGame`),
+   hepsi tıklama/dokunma tabanlı (sürükle-bırak zorunlu değil), Framer Motion ile spring
+   animasyonlu. A1'de her zaman "doğru" tamamlanır (hata risksiz kuralı); A2/A3/Assessment'te
+   gerçek doğruluk kontrolü var.
+5. **`LessonRunner`** (`apps/web/app/[subject]/[outcome]/`) — `engine-core` + içerik +
+   manipülatif bileşenleri birleştiren istemci bileşeni. A1→A2→A3→Assessment'i sırayla işletir,
+   destek göstergesi (A2'de), bitişte "kanıtlanan süreç bileşenleri" ekranı.
+6. **`packages/ui-kit/src/tokens.css`** Stitch referansına göre v2'ye güncellendi (K13d/e).
+7. **Route yeniden yapılandırıldı:** `/` (ana menü) → `/[subject]` (renkli mesh panel, 4 konu
+   oynanabilir/renkli, kalan 19 "Yakında") → `/[subject]/[outcome]` (ders). `/admin/...`
+   (eski studio, K13c).
+8. **Uçtan uca tarayıcıda test edildi:** ana menü, mesh panel, MAT.5.2.1'in A1→A2 geçişi
+   (gerçek "x=7" cevabı girilip doğrulandı, destek göstergesi göründü), MAT.5.4.2 (grid,
+   3×2=6 birim kare doğru hesaplandı), MAT.5.2.3 (pattern), `/admin` (çalışıyor).
+   `pnpm --filter web build` **temiz** (production build, 5 route, ~106-146 KB First Load JS).
+
+### Kapatılmayan / açık kalan
+
+- **Stitch'in 3 red-line-çelişen öğesi** (K13e) — kullanıcının onayı bekleniyor: puan/seri/sınav
+  navigator gerçekten istenmiyor mu, yoksa kırmızı çizgiler bu ürün için gevşetilsin mi?
+- `pnpm content:lint` CLI'ı yok (şema/loader var, CLI sarmalayıcı yok).
+- Diğer 19 öğrenme çıktısı için içerik yok (mesh'te "Yakında" olarak dürüstçe işaretli).
+- Assessment ekranı henüz gerçek kullanıcıyla test edilmedi (A1/A2 kadar derin test edilmedi,
+  kod yolu aynı olduğu için düşük risk ama doğrulanmadı).
+
+### Sonraki adım
+
+1. Kullanıcı test etsin, K13e'yi netleştirsin.
+2. Git commit + push (kullanıcının önceki tercihi: doğrudan `main`'e, PR ceremonisi yok).

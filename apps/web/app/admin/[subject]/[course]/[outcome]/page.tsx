@@ -5,7 +5,7 @@ import { saveOutcome } from "./actions";
 
 const EXTRA_COMPONENT_SLOTS = 3;
 
-export default async function OutcomePage({
+export default async function AdminOutcomePage({
   params,
 }: {
   params: Promise<{ subject: string; course: string; outcome: string }>;
@@ -29,27 +29,25 @@ export default async function OutcomePage({
   const emptySlots = Array.from({ length: EXTRA_COMPONENT_SLOTS });
 
   return (
-    <main className="shell">
-      <Link href={`/${subject}/${course}`} className="back-link">
+    <main className="admin-shell">
+      <Link href={`/admin/${subject}/${course}`} className="admin-back-link">
         ← {doc.subject.title} — {doc.course.title}
       </Link>
-      <p className="top-strip mono">{theme ? `${theme.code} — ${theme.title}` : outcome.themeCode}</p>
-      <h1 className="mono" style={{ fontFamily: "var(--font-mono)", fontSize: "1.4rem" }}>
-        {outcome.code}
-      </h1>
+      <p className="admin-top-strip mono">{theme ? `${theme.code} — ${theme.title}` : outcome.themeCode}</p>
+      <h1 style={{ fontFamily: "var(--font-mono)", fontSize: "1.4rem" }}>{outcome.code}</h1>
 
       <form action={boundSave}>
-        <fieldset className="field-group">
+        <fieldset className="admin-field-group">
           <legend>Öğrenme çıktısı</legend>
           <label htmlFor="title">Başlık</label>
           <textarea id="title" name="title" defaultValue={outcome.title} rows={2} />
         </fieldset>
 
-        <fieldset className="field-group">
+        <fieldset className="admin-field-group">
           <legend>Süreç bileşenleri</legend>
           <p>Bir bileşeni silmek için açıklamasını boşalt ve kaydet.</p>
           {outcome.processComponents.map((component, index) => (
-            <div className="component-row" key={component.code}>
+            <div className="admin-component-row" key={component.code}>
               <div>
                 <label htmlFor={`component-code-${index}`}>Harf</label>
                 <input id={`component-code-${index}`} name={`component-code-${index}`} defaultValue={component.code} />
@@ -70,7 +68,7 @@ export default async function OutcomePage({
           {emptySlots.map((_, offset) => {
             const index = outcome.processComponents.length + offset;
             return (
-              <div className="component-row" key={`new-${index}`}>
+              <div className="admin-component-row" key={`new-${index}`}>
                 <div>
                   <label htmlFor={`component-code-${index}`}>Harf</label>
                   <input id={`component-code-${index}`} name={`component-code-${index}`} />
@@ -89,10 +87,10 @@ export default async function OutcomePage({
 
       <section style={{ marginTop: "var(--space-4)" }}>
         <h2>İçerik (görevler)</h2>
-        <p className="content-note">
-          Bu öğrenme çıktısı için henüz görev içeriği yok. Görev JSON şeması (<code>content-schema</code>{" "}
-          paketi, A1/A2/A3/Assessment aşamaları) kurulunca bu bölümde görevler listelenip
-          düzenlenebilecek.
+        <p className="admin-content-note">
+          Bu öğrenme çıktısı için görev içeriği <code>content/matematik/tymm-5/tasks/{outcome.code}.json</code>{" "}
+          dosyasında yönetiliyor (S0.1 hızlandırılmış kapsamda 4 konu için elle yazıldı — bu ekrandan düzenleme
+          henüz yok, sıradaki iş).
         </p>
       </section>
     </main>

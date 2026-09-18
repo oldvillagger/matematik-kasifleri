@@ -11,7 +11,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@matematik-kasifleri/content-schema": "workspace:*",
     "@matematik-kasifleri/curriculum": "workspace:*",
+    "@matematik-kasifleri/engine-core": "workspace:*",
+    "@matematik-kasifleri/manipulatives": "workspace:*",
     "@matematik-kasifleri/ui-kit": "workspace:*",
     "next": "^15.1.0",
     "react": "^19.0.0",

@@ -39,6 +39,9 @@ pnpm-debug.log*
 *.pdf
 !docs/**/*.pdf
 
+# Tasarım referans dışa aktarımları (boyut, ikili) — sadece yerel referans
+*.zip
+
 # Geçici
 tmp/
 .scratch/

@@ -1,70 +1,28 @@
-@import "@matematik-kasifleri/ui-kit/tokens.css";
+/* Admin panel — same token system as the site, denser/utilitarian application. Classes prefixed admin-* to avoid colliding with the site's globals.css (both load on every page via the shared root layout). */
 
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-h1,
-h2,
-h3 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.2;
-  margin: 0 0 var(--space-2);
-}
-
-p {
-  max-width: 70ch;
-  color: color-mix(in srgb, var(--ink) 78%, transparent);
-}
-
-a {
-  color: var(--ink-blue);
-}
-
-code,
-.mono {
-  font-family: var(--font-mono);
-  font-size: 0.85em;
-}
-
-.shell {
-  max-width: 880px;
+.admin-shell {
+  max-width: 900px;
   margin: 0 auto;
   padding: var(--space-4) var(--space-3) var(--space-6);
+  font-family: var(--font-body);
+  color: var(--ink);
 }
 
-.top-strip {
+.admin-top-strip {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: var(--brass);
-  letter-spacing: 0.02em;
+  color: var(--accent);
   margin-bottom: var(--space-1);
 }
 
-.back-link {
+.admin-back-link {
   display: inline-block;
   margin-bottom: var(--space-3);
   font-size: 0.9rem;
+  color: var(--primary);
 }
 
-/* ---------- course/subject list ---------- */
-
-.course-list {
+.admin-course-list {
   list-style: none;
   margin: var(--space-3) 0 0;
   padding: 0;
@@ -72,105 +30,90 @@ code,
   flex-direction: column;
   gap: var(--space-2);
 }
-
-.course-list li {
+.admin-course-list li {
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   padding: var(--space-3);
   background: var(--paper-raised);
 }
-
-.course-list a {
+.admin-course-list a {
   font-family: var(--font-display);
+  font-weight: 700;
   font-size: 1.15rem;
   text-decoration: none;
   color: var(--ink);
 }
-
-.course-list .stat {
+.admin-course-list .admin-stat {
   display: block;
   margin-top: var(--space-1);
   font-size: 0.85rem;
-  color: color-mix(in srgb, var(--ink) 60%, transparent);
+  color: var(--ink-muted);
 }
 
-/* ---------- theme / outcome ledger ---------- */
-
-.theme-group {
+.admin-theme-group {
   margin-top: var(--space-4);
 }
-
-.theme-group h2 {
+.admin-theme-group h2 {
   font-size: 1.1rem;
   padding-bottom: var(--space-1);
-  border-bottom: 2px solid var(--pine);
+  border-bottom: 2px solid var(--primary);
 }
 
-.outcome-table {
+.admin-outcome-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: var(--space-2);
 }
-
-.outcome-table tr {
+.admin-outcome-table tr {
   border-top: 1px solid var(--border);
 }
-
-.outcome-table td {
+.admin-outcome-table td {
   padding: var(--space-2) var(--space-2) var(--space-2) 0;
   vertical-align: top;
 }
-
-.outcome-table td.code {
+.admin-outcome-table td.admin-code {
   font-family: var(--font-mono);
   font-size: 0.82rem;
-  color: var(--ink-blue);
+  color: var(--secondary);
   white-space: nowrap;
   width: 9ch;
 }
-
-.outcome-table td.title a {
+.admin-outcome-table td.admin-title a {
   color: var(--ink);
   text-decoration: none;
 }
-
-.outcome-table td.title a:hover {
-  color: var(--pine);
+.admin-outcome-table td.admin-title a:hover {
+  color: var(--primary);
 }
-
-.outcome-table td.meta {
+.admin-outcome-table td.admin-meta {
   font-size: 0.8rem;
-  color: color-mix(in srgb, var(--ink) 55%, transparent);
+  color: var(--ink-muted);
   white-space: nowrap;
   text-align: right;
 }
-
-.flag {
-  color: var(--coral);
+.admin-flag {
+  color: var(--danger);
   font-weight: 700;
 }
 
-/* ---------- outcome edit form ---------- */
-
-.field-group {
+.admin-field-group {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: var(--space-3);
   margin-bottom: var(--space-3);
 }
-
-.field-group > legend {
+.admin-field-group > legend {
   font-family: var(--font-display);
+  font-weight: 700;
   font-size: 1rem;
   padding: 0 var(--space-1);
 }
-
-.field-group p {
+.admin-field-group p {
   font-size: 0.85rem;
   margin: 0 0 var(--space-2);
 }
 
-.component-row {
+.admin-component-row {
   display: grid;
   grid-template-columns: 4ch 1fr;
   gap: var(--space-1) var(--space-2);
@@ -178,27 +121,23 @@ code,
   padding-block: var(--space-2);
   border-top: 1px solid var(--border);
 }
-
-.component-row:first-of-type {
+.admin-component-row:first-of-type {
   border-top: none;
 }
-
-.component-row label {
+.admin-component-row label {
   font-size: 0.72rem;
-  text-transform: none;
-  color: color-mix(in srgb, var(--ink) 55%, transparent);
+  color: var(--ink-muted);
   grid-column: 1 / -1;
 }
 
-label {
+.admin-shell label {
   display: block;
   font-size: 0.8rem;
-  color: color-mix(in srgb, var(--ink) 65%, transparent);
+  color: var(--ink-muted);
   margin-bottom: 2px;
 }
-
-input,
-textarea {
+.admin-shell input,
+.admin-shell textarea {
   font-family: var(--font-body);
   font-size: 0.92rem;
   color: var(--ink);
@@ -208,37 +147,35 @@ textarea {
   padding: 6px 8px;
   width: 100%;
 }
-
-input:focus,
-textarea:focus {
-  outline: 2px solid var(--pine);
+.admin-shell input:focus,
+.admin-shell textarea:focus {
+  outline: 2px solid var(--primary);
   outline-offset: 1px;
 }
-
-textarea#title {
+.admin-shell textarea#title {
   font-family: var(--font-display);
   font-size: 1.05rem;
 }
 
-button[type="submit"] {
+.admin-shell button[type="submit"] {
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.92rem;
-  color: var(--paper);
-  background: var(--pine);
+  color: #fff;
+  background: var(--primary);
   border: none;
-  border-radius: var(--radius-sm);
-  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  padding: 10px 22px;
   cursor: pointer;
 }
-
-button[type="submit"]:hover {
-  background: var(--pine-strong);
+.admin-shell button[type="submit"]:hover {
+  background: var(--primary-strong);
 }
 
-.content-note {
-  border-left: 3px solid var(--brass);
+.admin-content-note {
+  border-left: 3px solid var(--accent);
   padding: var(--space-2) var(--space-3);
-  background: var(--paper-raised);
+  background: var(--accent-tint);
   font-size: 0.88rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }

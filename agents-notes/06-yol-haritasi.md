@@ -14,6 +14,15 @@ Faz 0'ın amacı **çalışan, ikna edici bir kavram kanıtı**. Ürün değil, 
 > ve lisans/B2B-B2C tasarımı **gündem dışı bırakıldı** — host sistemde zaten var (`CLAUDE.md`
 > "Cevaplanmamış sorular" 1-2).
 
+> **2026-09-18, aynı gün devam (K13 — hız modu):** Kullanıcı "2 aylık proje değil" dedi, S0.1/S0.2
+> arası ayrımı fiilen atladık. **4 konu şu an uçtan uca oynanabilir:** MAT.5.2.1, MAT.5.2.3,
+> MAT.5.4.1, MAT.5.4.2 — her biri tam A1→A2→A3→Assessment döngüsüyle, `engine-core` +
+> `content-schema` + `manipulatives` gerçek ve testli. `apps/studio` `apps/web/admin`'e taşındı.
+> Görsel kimlik kullanıcının verdiği Stitch tasarımına göre değişti. Detay:
+> `00-oturum-gunlugu.md` Oturum 002 devam 4. Aşağıdaki S0.1-S0.4 tablosu artık bu gerçekleşmiş
+> durumu tam yansıtmıyor — bir sonraki oturumda yeniden yazılmalı, şimdilik referans için
+> bırakıldı.
+
 ---
 
 ## Faz 0 — Kavram Kanıtı (18 Eylül → 9 Ekim 2026 hedef)

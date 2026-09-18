@@ -2,117 +2,143 @@
 
 Başlangıç: **18 Eylül 2026**
 
-Faz 0'ın tek amacı **staj yerine sunulacak, çalışan, ikna edici bir demo**. Ürün değil, kavram kanıtı. Faz 0'ı şişirmek bu projenin en olası ölüm sebebidir — bu yüzden kapsam bilinçli olarak dar tutuldu.
+Faz 0'ın amacı **çalışan, ikna edici bir kavram kanıtı**. Ürün değil, kavram kanıtı. Faz 0'ı
+şişirmek bu projenin en olası ölüm sebebidir — bu yüzden kapsam bilinçli olarak dar tutuldu.
+
+> **2026-09-18 güncellemesi (Oturum 002):** Bu doküman, o oturumda alınan K8–K12 kararlarına göre
+> güncellendi. Değişenler: (1) modül isimleri artık sabit değil — "Denge Şehri" gibi spesifik
+> konseptler yerine öğrenme çıktısı kodları kullanılıyor, yaratıcı konsept seçimi bekleniyor
+> (K8, `08-genisletilmis-platform-mimarisi.md` §4); (2) içerik modeli baştan çok-derslik/jenerik
+> (K10); (3) admin panel (`apps/studio`) önceliği Faz 2'den öne çekildi ve **iskeleti zaten
+> kuruldu** (K11); (4) yeni bir `ASSESSMENT` içerik tipi eklendi (K12); (5) entegrasyon senaryosu
+> ve lisans/B2B-B2C tasarımı **gündem dışı bırakıldı** — host sistemde zaten var (`CLAUDE.md`
+> "Cevaplanmamış sorular" 1-2).
 
 ---
 
-## Faz 0 — Staj Demosu (3 hafta: 18 Eylül → 9 Ekim 2026)
+## Faz 0 — Kavram Kanıtı (18 Eylül → 9 Ekim 2026 hedef)
 
 ### Kapsam
 
 | Var | Yok |
 |---|---|
-| 2 modül: **Denge Şehri** (MAT.5.2.1), **Birim Kare Atölyesi** (MAT.5.4.1-3) | Diğer 10 modül |
-| Tam A1→A2→A3 döngüsü, ikisinde de | Uyarlanabilir model, aralıklı tekrar |
+| 2 modül: **MAT.5.2.1** (eşitliğin korunumu) + **MAT.5.4.1-4** (çevre/alan) — isimleri K8 sonrası netleşecek | Diğer modüller (bkz. `02-mufredat-haritasi.md` faz sütunu) |
+| Tam A1→A2→A3→**Assessment** döngüsü (K12), ikisinde de | Uyarlanabilir model, aralıklı tekrar |
 | Süreç bileşeni kanıt kaydı | Gerçek veritabanı (localStorage + IndexedDB yeterli) |
-| Basit öğretmen görünümü (tek çocuğun kanıt tablosu) | Çok kullanıcılı panel, sınıf yönetimi |
+| Admin panel: içerik gezgini + tam CRUD (**zaten var**, K11) | Çok kullanıcılı roller, yetkilendirme |
 | Yazdırılabilir fiziksel görev kâğıdı (2 adet) | Fotoğraf yükleme |
 | Karargâh + harita + Kâşif Kartı (ilk 10 kart) | Avatar özelleştirme, hikâye bölümleri |
-| Gerçek kimlik yok — demo kullanıcısı | Auth, KVKK akışı (gerçek veri yok çünkü) |
+| Gerçek kimlik yok — demo kullanıcısı | Auth, KVKK akışı, entegrasyon (gündem dışı) |
 
-### Sprintler
+### Sprintler ve gerçek durum
 
-**S0.1 — Temel (18-24 Eylül)**
-- [ ] pnpm + Turborepo monorepo iskeleti, TS strict, ESLint, Vitest, CI
-- [ ] `packages/curriculum`: 23 çıktı + süreç bileşenleri veri olarak (PDF'lerden çıkarıldı, doğrulandı)
-- [ ] `packages/content-schema`: Zod şemaları + `content:lint` (kırmızı çizgi kuralları dâhil)
-- [ ] `packages/engine-core`: `cra-machine`, `support-policy`, `evidence` — **testleriyle birlikte**
-- [ ] `apps/web`: Next.js iskeleti, tasarım token'ları, Tailwind
-- **Çıktı:** boş ama doğru iskelet; `pnpm test` yeşil
+**S0.1 — Temel** — **kısmen tamam**
+- [x] pnpm + Turborepo monorepo iskeleti, TS strict, ESLint
+- [x] `packages/curriculum`: 23 çıktının **tamamı**, resmî `tymm.meb.gov.tr` portalından ve MEB
+      PDF'lerinden doğrulanmış süreç bileşenleriyle — JSON tabanlı, çok-derslik mimariye uygun
+      (K10)
+- [x] `apps/studio`: admin panel iskeleti — tema/çıktı listesi + tam düzenlenebilir form
+      (K11, plandan önde)
+- [x] `apps/web`: Next.js iskeleti + `packages/ui-kit` tasarım kimliği ("Kâşif Günlüğü")
+- [ ] `packages/content-schema`: Zod şemaları + `content:lint` (kırmızı çizgi kuralları +
+      `ASSESSMENT` stage, K12) — **yapılmadı, sıradaki iş**
+- [ ] `packages/engine-core`: `cra-machine`, `support-policy`, `evidence` — testleriyle birlikte
+      — **yapılmadı**
+- [ ] Vitest + CI kurulmadı
+- **Çıktı (hedef):** `pnpm test` yeşil — **henüz karşılanmadı**
 
-**S0.2 — Denge Şehri (25 Eylül – 1 Ekim)**
-- [ ] `manipulatives/balance-scale`: sürükle-bırak + dokunma alternatifi + klavye, spring animasyonlu eğilme
-- [ ] A1: serbest keşif + ön tahmin + **Çift El eldiveni** açılışı
-- [ ] A2: terazi → şema → sembol geçişi, `support` 1.0→0.0 azaltması
-- [ ] A3: "Usta Sınavı", zamansız/ipucusuz, 5 soru + 1 açık uçlu
-- [ ] 18 görev içeriği (6 × 3 aşama)
-- [ ] Kanıt kaydı: MAT.5.2.1 a/b/c/ç/d
+**S0.1.5 — Yaratıcı konsept kararı (yeni, K8 gereği)**
+- [ ] MAT.5.2.1 için oyun konsepti seçimi (Yankı Kapısı / İkiz Vinç / başka)
+- [ ] MAT.5.4.1-4 için oyun konsepti seçimi (Harita Kâşifi / Işık Bahçesi / başka)
+- [ ] Seçilenler `agents-notes/09-oyun-konseptleri-v2.md`'ye yazılır, `04-oyun-tasarimi.md`'nin
+      müfredat eşlemesi korunur, sadece konsept/isim/görsel katmanı değişir
+- **Çıktı:** S0.2'ye başlamadan önce bu karar netleşmeli — motor mekaniği tasarıma göre şekillenir
+
+**S0.2 — İlk modül (MAT.5.2.1)**
+- [ ] `packages/manipulatives`: seçilen konseptin çekirdek etkileşimi (sürükle-bırak + dokunma
+      alternatifi + klavye, spring animasyonlu geri bildirim)
+- [ ] A1: serbest keşif + ön tahmin + "güç" açılışı (eski adıyla Çift El — eşitliğin korunumu
+      aksiyomu)
+- [ ] A2: manipülatif → şema → sembol geçişi, `support` 1.0→0.0 azaltması (iki yönlü)
+- [ ] A3: zamansız/ipucusuz geri çağırma
+- [ ] **Assessment:** modül tamamlanınca açılan 8-10 sorulu Konu Sonu Testi (K12)
+- [ ] 18+ görev içeriği (a/b/c/ç/d süreç bileşenlerinin her biri için)
 - **Çıktı:** tek modül baştan sona oynanabilir
 
-**S0.3 — Birim Kare + Kabuk (2-8 Ekim)**
-- [ ] `manipulatives/unit-grid`: döşeme, satır kopyalama, çevre/alan okuma
-- [ ] 3 sipariş türü (alanı bul / 24 karo tüm dikdörtgenler / 20 m çit)
-- [ ] 18 görev içeriği
-- [ ] Karargâh + harita + Kâşif Kartı ekranı
-- [ ] Öğretmen görünümü: süreç bileşeni kanıt tablosu
+**S0.3 — İkinci modül (MAT.5.4.1-4) + kabuk**
+- [ ] `packages/manipulatives`: ikinci konseptin çekirdek etkileşimi
+- [ ] Sipariş/görev türleri (alan bul / sabit alan-değişken çevre / sabit çevre-değişken alan)
+- [ ] 18+ görev içeriği + Assessment
+- [ ] Karargâh + harita + Kâşif Kartı ekranı (temel iskeleti `apps/web`'de var, oyun bağlanacak)
+- [ ] Admin panelin "İçerik (görevler)" bölümü gerçek task editörüne dönüşür (content-schema
+      hazır olduğunda)
 - [ ] 2 yazdırılabilir fiziksel görev kâğıdı (PDF)
 - [ ] Erişilebilirlik geçişi (axe temiz), mobil/tablet düzen kontrolü
 - **Çıktı:** tek linkle paylaşılabilen demo
 
-**S0.4 — Sunum (9 Ekim)**
-- [ ] `docs/sunum.md` — 10 slaytlık anlatı
-- [ ] 2 dakikalık ekran kaydı (internet olmayan toplantı ihtimaline karşı)
+**S0.4 — Sunum**
+- [ ] `docs/sunum.md` — anlatı
+- [ ] Ekran kaydı
 - [ ] README'de "5 dakikada dene" bölümü
 
 ### Faz 0 kabul kriterleri
 
-1. Bir yetişkin, hiç açıklama olmadan Denge Şehri'ni açıp **90 saniye içinde** eşitliğin korunumunu keşfedebiliyor.
+1. Bir yetişkin, hiç açıklama olmadan ilk modülü açıp **90 saniye içinde** çekirdek fikri
+   keşfedebiliyor.
 2. A1'de hiçbir yerde puan, süre, kırmızı X görünmüyor.
 3. A2'de destek gerçekten azalıyor ve **geri de artabiliyor** (iki ardışık hatada).
-4. A3'te şemada `timeLimit` alanı **tanımlı bile değil**.
-5. Öğretmen görünümü, "MAT.5.2.1-ç henüz kanıtlanmadı" diyebiliyor.
+4. A3 ve Assessment'te şemada `timeLimit` alanı **tanımlı bile değil**.
+5. Admin panel, "MAT.5.2.1-ç henüz kanıtlanmadı" diyebiliyor (zaten gösteriyor — kaynak
+   verisi tam).
 6. `pnpm content:lint` her görevin gerçek bir süreç bileşenine bağlı olduğunu doğruluyor.
 7. Demo, düşük-orta bir Android tablette akıcı çalışıyor.
 
-### Sunumun anlatısı (staj yerine)
-
-> 1. TYMM 2024-2025 ile müfredat beceri temelli oldu; öğretmenler **süreç bileşenlerini ölçemiyor**.
-> 2. Araştırma: oyunlaştırma (puan/rozet) küçük etki yapıyor; matematiği oyunun mekaniği yapmak büyük etki yapıyor.
-> 3. Bu yüzden matematiği ödül değil, mekanik yaptık. **[demoyu aç, Çift El'i göster]**
-> 4. Oyundan teste geçiş sıçrama değil, CRA köprüsü. **[A1→A2→A3'ü göster]**
-> 5. Ve bu, MEB'in kendi programının tarif ettiği etkinlik: *"kefeli terazi… sanal manipülatifler"* — **[resmî PDF'ten alıntıyı göster]**
-> 6. Yan ürün: öğretmenin kâğıtla ölçemediği süreç bileşeni verisi. **[kanıt tablosunu göster]**
-> 7. Ve bu bir sayfa değil, gömülebilir bir motor — sizin platformunuza şu üç yoldan girer. **[entegrasyon şeması]**
-
 ---
 
-## Faz 1 — MVP (Ekim–Aralık 2026)
+## Faz 1 — MVP
 
 **Amaç:** Sınıf pilotuna girebilecek gerçek ürün.
 
-- Modüller: + Pergel Adası, Açı Kulesi, Örüntü Bahçesi, Sıra Kapıları, Veri Dedektifi (toplam 7 modül, ~13 çıktı)
+- Modüller: kalan yüksek-öncelikli çıktılar (bkz. `02-mufredat-haritasi.md` Faz sütunu)
 - PostgreSQL + Prisma, gerçek kalıcılık
-- Kimlik: sınıf kodu + görsel parola (çocuk), e-posta (öğretmen/veli)
+- Kimlik: sınıf kodu + görsel parola (çocuk) — **lisans/kullanıcı yönetimi host sistemde,
+  bizim kapsamımızda değil** (`CLAUDE.md` açık soru 2, kapandı)
 - **KVKK akışı: veli açık rızası, aydınlatma metni, veri saklama politikası** — bkz. `07`
-- Öğretmen paneli: sınıf ısı haritası, süreç bileşeni kırılımı, yazdırılabilir materyaller
+- `apps/studio`: salt-okunur gezgin → **tam admin panel** (S0.1'de zaten başladı, burada olgunlaşır)
+  — süreç bileşeni kırılımı, yazdırılabilir materyaller
 - Aralıklı tekrar (3/7/21 gün)
 - Veli görünümü: haftalık özet, ekran süresi kontrolü, bildirim ayarları (varsayılan kapalı)
 - PWA + çevrimdışı
-- **Entegrasyon:** Senaryo B (iframe + postMessage) çalışır hâlde
+- **Entegrasyon:** gündeme alınmadı, gerektiğinde `05-teknik-mimari.md` §7'deki üç senaryodan
+  biri seçilir — motor çerçeveden bağımsız olduğu için mimari şimdiden hazır
 - 5-8 çocukla kullanılabilirlik testi + bulguların işlenmesi
 
-**Faz 1 çıkış kriteri:** Bir öğretmen, hiç destek almadan sınıfını kurup bir çıktıyı baştan sona işletebiliyor.
+**Faz 1 çıkış kriteri:** Bir öğretmen/editör, hiç destek almadan admin panelden yeni bir görev
+ekleyip yayınlayabiliyor; bir öğrenci bir çıktıyı baştan sona işletebiliyor.
 
 ---
 
-## Faz 2 — Kapsam tamamlama ve pilot (Ocak–Nisan 2027)
+## Faz 2 — Kapsam tamamlama, çok-derslik genişleme ve pilot
 
-- Kalan 5 modül → **23 çıktının tamamı kapsanır**
+- Kalan modüller → **TYMM 5. sınıf matematiğin 23 çıktısının tamamı kapsanır**
+- **İkinci ders/kurs eklenir** (K10 mimarisinin ilk gerçek testi) — `tymm.meb.gov.tr` portalı
+  aynı yöntemle taranır (`agents-notes/kaynaklar/README.md`), kod değişikliği gerekmez
 - MAT.5.3.2 / MAT.5.3.6 için **yansıtma aracı** (günlük/sunum) — oyun değil
 - Fiziksel görev fotoğraf yükleme (KVKK değerlendirmesi sonrası)
 - Hikâye bölümleri, avatar/karargâh özelleştirme
 - Veli-çocuk kooperatif görevleri
-- `apps/studio`: içerik editörü (öğretmen/editör kendi görevini üretebilir)
+- **Opsiyonel süreli pratik modu** (backlog, `08` §3) — varsayılan kapalı, A3/Assessment'in
+  süresiz kuralını bozmaz
 - Uyarlanabilir zorluk: telemetri birikince Elo/BKT değerlendirmesi
-- **Okul pilotu (2. dönem, Şubat 2027)** — 2-3 sınıf, kâğıt-kalem ön/son test ile transfer ölçümü
-- LTI 1.3 (Senaryo C) gerekiyorsa
+- **Okul pilotu** — kâğıt-kalem ön/son test ile transfer ölçümü
+- LTI 1.3 gerekirse (entegrasyon gündeme gelirse)
 
 ---
 
-## Faz 3 — Ticarileşme (2027 yazı → 2027-2028 öğretim yılı)
+## Faz 3 — Ticarileşme
 
-- 6. sınıfa genişleme (aynı motor, yeni müfredat verisi + temalandırma — mimari bunun için kuruldu)
-- Okul/kurum lisans yönetimi, faturalama
+- Ek sınıf seviyelerine genişleme (mimari bunun için kuruldu — K10)
+- Okul/kurum lisans yönetimi, faturalama — **eğer host sistem bunu sağlamıyorsa**
 - Çok kiracılı (multi-tenant) mimari
 - Öğretmen eğitimi materyalleri, satış demosu
 - Erişilebilirlik ve güvenlik denetimi (dış)
@@ -124,12 +150,11 @@ Faz 0'ın tek amacı **staj yerine sunulacak, çalışan, ikna edici bir demo**.
 | Risk | Erken uyarı işareti | Karşılık |
 |---|---|---|
 | **Kapsam patlaması** (en yüksek olasılık) | Faz 0'da 3. modül konuşulmaya başlanırsa | Faz 0 kapsam tablosu sözleşme kabul edilir; yeni fikir `07-backlog`'a yazılır, yapılmaz |
-| Manipülatif tasarımı beklenenden zor | Terazi 1 haftada bitmezse | SVG + basit fizik; gerçek fizik motoru yok. Gerekirse A1 basitleşir, A2/A3 korunur |
-| Matematiğin kabuk kalması | "Bunu bir platform oyununa çevirsek" cümlesi | Her mekanik için §0 testi; kod incelemesinde zorunlu |
-| Staj yerinin stack'i uyumsuz çıkması | — | Mimari zaten üç senaryoyu destekliyor; motor etkilenmez (`05` §7) |
-| KVKK gecikmesi Faz 1'i bloklar | Faz 1 ortasında rıza akışı hâlâ yoksa | Faz 0'da gerçek veri toplanmıyor; KVKK işi Faz 1 başında paralel başlatılır, sona bırakılmaz |
-| İçerik üretimi geliştirmeden yavaş | Faz 1'de modül hazır, görev yoksa | Görev üreteçleri (parametrik) S0.1'de değil ama Faz 1 başında yazılır |
-| Tek kişilik proje / staj süresi biterse | — | `agents-notes/` bu yüzden var: karar gerekçeleri devredilebilir |
+| Manipülatif tasarımı beklenenden zor | İlk modül 1 haftada bitmezse | SVG + basit fizik; gerçek fizik motoru yok. Gerekirse A1 basitleşir, A2/A3 korunur |
+| Matematiğin kabuk kalması | "Bunu bir platform oyununa çevirsek" cümlesi | Her mekanik için CLAUDE.md'deki tasarım testi; kod incelemesinde zorunlu |
+| Oyun konsepti kararı gecikirse S0.2 bloklanır | S0.1.5 bir haftadan uzun sürerse | İki seçenek de zaten tasarlandı (bu oturumda); karar bir sonraki oturumda hızlı verilmeli |
+| İçerik üretimi geliştirmeden yavaş | Modül hazır, görev yoksa | Görev üreteçleri (parametrik) planlanmalı |
+| Tek kişilik proje | — | `agents-notes/` bu yüzden var: karar gerekçeleri devredilebilir |
 
 ---
 
@@ -140,5 +165,6 @@ Faz 1'den itibaren, "kaç kullanıcı" değil bunlar:
 - **Öğrenme:** A2 çıkışında `support=0` ile çözüm oranı; A2→A3 başarı düşüşü (≤15 puan hedef)
 - **Bağlılık:** 4. hafta / 1. hafta oturum süresi oranı (yenilik etkisi sönüyor mu?)
 - **Kapsama:** Kanıtlanan süreç bileşeni / toplam bileşen
-- **Kaygı:** A3 öncesi/sonrası duygu ölçeri (opsiyonel, atlanabilir)
-- **Öğretmen değeri:** Panelin yazdırılan materyal sayısı — kullanılmayan panel, yapılmamış panel
+- **Kaygı:** A3/Assessment öncesi/sonrası duygu ölçeri (opsiyonel, atlanabilir)
+- **İçerik editörü değeri:** Admin panelden eklenen/düzenlenen görev sayısı — kullanılmayan
+  panel, yapılmamış panel

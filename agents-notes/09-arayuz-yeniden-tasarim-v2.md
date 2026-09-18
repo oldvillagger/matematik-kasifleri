@@ -136,18 +136,37 @@ ile şimdi birebir netleşti:
 
 ## 5. Şu an ne var, ne eksik (bir sonraki oturumun TODO'su)
 
+**Bu tablo 2026-09-18 oturum 003'te tamamlandı.** Aşağıdaki her madde uygulandı ve tarayıcıda
+doğrulandı; artık TODO değil, **arayüz sözleşmesi** — bu davranışları bozan değişiklik geri
+alınmalıdır.
+
 | # | İş | Durum |
 |---|---|---|
-| 1 | `BalanceGame`/`GridGame`/`PatternGame` A1 modlarından rakamları kaldır, görsel/şekil tabanlı yap | ❌ yapılmadı |
-| 2 | A2'de "wrong" kırmızı mesajı kaldır, otomatik ipucu akışına çevir | ❌ yapılmadı |
-| 3 | Gerçek test ekranı (soru navigatörü + sidebar + AI Yardım stub) — Stitch `code.html`'i okuyup birebir uyarla | ❌ yapılmadı |
-| 4 | Ana sayfa: Stitch'teki "E-Eğitim Genç" düzenine birebir uy (hero, ders kartları, hızlı erişim — liderlik tablosu HARİÇ) | ❌ yapılmadı |
-| 5 | Ders sayfası: düz mesh yerine ünite/konu akordiyon akışı | ❌ yapılmadı — mevcut `/[subject]/page.tsx` tamamen değişecek |
-| 6 | Puan + Seri (streak, admin togglelı) + Rozet veri modeli — muhtemelen `engine-core`'a veya yeni bir `packages/progression` paketine | ❌ yapılmadı |
-| 7 | Hata Kitapçığı ekranı (`/matematik/analiz`) | ❌ yapılmadı |
-| 8 | Admin ayarlar sayfası: streak aç/kapa | ❌ yapılmadı |
-| 9 | CLAUDE.md kırmızı çizgi satırını K14'e göre güncelle | ❌ yapılmadı (bu oturumda, hemen sonra yapılacak) |
-| 10 | 4 konunun içindeki "yakında" etiketi kaldırılmış olmalı (zaten mesh'te 4 seçilen konuda yoktu, akordiyonda da olmayacak) | ✅ zaten doğru davranış, korunacak |
+| 1 | `BalanceGame`/`GridGame`/`PatternGame` A1 modlarından rakamları kaldır, görsel/şekil tabanlı yap | ✅ `Visual.tsx` (şekil/renk/boyut alfabesi) + her oyun `stage` prop'u alıyor; şema `a1IsNumberless` refine'ı ile zorluyor |
+| 2 | A2'de "wrong" kırmızı mesajı kaldır, otomatik ipucu akışına çevir | ✅ kırmızı ton tamamen kalktı (`SoftResult`'ta `danger` yok); yanlışta `HintCard` kendiliğinden açılıyor |
+| 3 | Gerçek test ekranı — Stitch `code.html`'i okuyup birebir uyarla | ✅ `TestScreen.tsx`: 3/6/3 kolon, soru matrisi + Aktif/Dolu/Boş legend, karalama tahtası, "Ders İçeriği" ağacı, Kaydet & Bitir. Sayaç yok (K15) |
+| 4 | Ana sayfa: Stitch düzenine birebir uy (liderlik tablosu HARİÇ) | ✅ hero + Günlük Hedef + ders kartı + 6 ünite kartı + Hızlı Erişim üçlüsü; liderliğin yerinde "Kanıt Panom" |
+| 5 | Ders sayfası: düz mesh yerine ünite/konu akordiyon akışı | ✅ `UnitAccordion.tsx` — filtre pill'leri, Tamamlandı/Şu An Buradasın/Kilitli, sağda `CourseSidebar` |
+| 6 | Puan + Seri (admin togglelı) + Rozet veri modeli | ✅ `packages/progression` (saf TS, 15 test) + `ProgressProvider` (localStorage) |
+| 7 | Hata Kitapçığı ekranı (`/matematik/analiz`) | ✅ `AnalyticsBoard.tsx` — 4 metrik, kazanım bazlı kanıt grafiği, hata kitapçığı, rozet vitrini |
+| 8 | Admin ayarlar sayfası: streak aç/kapa | ✅ `/admin/ayarlar` → `content/settings.json` (seri, puan, günlük hedef) |
+| 9 | CLAUDE.md kırmızı çizgi satırını K14'e göre güncelle | ✅ + K15 (sayaç) ve K16 (Tailwind) de işlendi |
+| 10 | 4 konuda "yakında" etiketi olmamalı | ✅ akordiyonda da yok; içeriği olmayan üniteler Stitch'in kendi **kilit** desenini kullanıyor ("Sıradaki Ünite"), "yakında" kelimesi hiçbir yerde geçmiyor |
+
+### K15 — Geri sayım sayacı (tasarımdan tek bilinçli sapma)
+
+`etkile_imli_test_ve_soru_z_m_ekran/code.html` **okununca** ortaya çıktı: Stitch test ekranında
+`setInterval` ile çalışan bir **14:25 geri sayım sayacı** var. Bu dokümanın önceki sürümü
+"Stitch'te sayaç yok" diyordu — bu **yanlıştı**, çünkü o sırada yalnızca `screen.png` ve
+`DESIGN.md` incelenmişti. Çelişki kullanıcıya soruldu; karar: **sayacı koyma**, kırmızı çizgi
+kazanır. Yerine "Süre sınırı yok" rozeti + "n / m Soru" ilerlemesi kondu.
+
+### K16 — Tailwind
+
+Stitch'in dört ekranı da Tailwind + özel bir `tailwind.config` ile yazılmış. "Birebir uy"
+talimatını 1700 satır markup'ı elle CSS'e çevirerek karşılamak hem yavaş hem sadakatsiz
+olurdu. Karar: `apps/web`'e Tailwind v3 kurulup **Stitch'in kendi config'i değiştirilmeden**
+kopyalandı. `/admin` elle yazılmış `admin.css`'te kaldı.
 
 **Mevcut çalışan alt yapı (değişmeden kalacak):** `packages/engine-core` (cra-machine,
 support-policy, evidence) — pedagojik motor doğru, sadece **UI katmanı** yanlıştı.
@@ -167,6 +186,21 @@ girmiyor). İçindeki 4 ekran + kod:
 - `ba_ar_takip_ve_hata_kitap_analizi/code.html` — analiz/hata kitapçığı sayfası
 - `vibrant_junior_learn/DESIGN.md` — zaten okundu, `packages/ui-kit/src/tokens.css`'e işlendi
 
-**Not:** Bu oturumda sadece `screen.png`'ler (ekran görüntüleri) incelendi, `code.html`'ler
-**henüz okunmadı**. Bir sonraki oturumda "birebir uy" için önce bu 4 `code.html` dosyası
-okunup gerçek class/CSS yapısı çıkarılmalı, sonra uygulanmalı.
+**Durum (oturum 003):** dört `code.html` dosyasının **tamamı okundu** ve uygulandı. Zip
+gitignore'da olduğu için repoda yok; yeniden incelemek gerekirse proje kökündeki zip'i geçici
+bir dizine açmak yeterli. Tasarım token'larının repodaki kalıcı kopyası
+`apps/web/tailwind.config.cjs` — zip kaybolsa bile tasarım sistemi orada duruyor.
+
+### Okunan dosyalardan çıkan, uygulamada karşılığı olan yapılar
+
+| Stitch ekranı | Bizdeki karşılığı |
+|---|---|
+| Sabit üst bar (logo · "5. Sınıf" pill · nav pill'leri · Puan · bildirim · profil) | `app/lib/SiteChrome.tsx` — logo görseli yerine ikon, çocuk fotoğrafı/tam adı yerine takma ad rozeti (KVKK) |
+| Hero + "Günlük Hedefin 3/5 Ders" | `(site)/HomeHero.tsx` |
+| Ders kartı ızgarası (h-36 gradient banner + ilerleme + "Derse Git") | `(site)/CourseCards.tsx` |
+| Hızlı Erişim üçlüsü | `(site)/QuickAccess.tsx` (ortadaki liderlik kartı → "Kanıt Panom") |
+| Modül hero + SVG halka ilerleme + 4'lü istatistik şeridi | `(site)/[subject]/CourseHero.tsx` |
+| Ünite akordiyonu (3 durum) + filtre pill'leri | `(site)/[subject]/UnitAccordion.tsx` |
+| Sağ panel (test kartı · günün sorusu · dikkat noktası · canlı oda · seri) | `(site)/[subject]/CourseSidebar.tsx` |
+| Test ekranı (3/6/3, soru matrisi, çizim araçları, Ders İçeriği) | `(site)/[subject]/[outcome]/TestScreen.tsx` |
+| Analiz ekranı (şerit · 4 metrik · barlar · Hata Kitapçığı · rozet vitrini) | `(site)/[subject]/analiz/AnalyticsBoard.tsx` |

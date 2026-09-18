@@ -362,3 +362,73 @@ cevap kutusuna sıkıştırdım.
 5. Ana sayfayı ve ders sayfasını (ünite/konu akordiyonu) Stitch'e göre yeniden yaz.
 6. Puan/seri/rozet veri modeli + admin'de streak aç/kapa anahtarı.
 7. Hata Kitapçığı / analiz sayfası.
+
+---
+
+## Oturum 003 — 2026-09-18: Stitch tasarımına birebir geçiş, 3 fazlı akış uygulandı
+
+Önceki oturumun sonunda yazılan `09-arayuz-yeniden-tasarim-v2.md` §5 TODO listesi **baştan
+sona uygulandı.** Kullanıcı önce planı istedi, dört karar noktasını yanıtladı, sonra
+uygulamaya onay verdi.
+
+### Uygulamaya başlamadan önce kullanıcıya sorulan 4 karar
+
+Plan yazılırken ortaya çıkan dört gerçek çelişki/seçim kullanıcıya tek seferde soruldu —
+varsayım yapılmadı:
+
+| Soru | Kullanıcının cevabı | Kayıt |
+|---|---|---|
+| Stitch test ekranındaki 14:25 geri sayım sayacı vs. "süre sınırı olamaz" kırmızı çizgisi | **Sayacı koyma** | K15 |
+| "Canlı Soru-Cevap Odası" kartı (açık sohbet yasağı + altyapı yok) | **Görsel olarak koy, pasif** | K17 |
+| Stitch Tailwind ile yazılmış, projede Tailwind yok | **Tailwind kur** | K16 |
+| Stitch'te 5 ders kartı var, bizde 1 gerçek ders | **Matematik + 6 ünite kartı** | K18 |
+
+### Neden `code.html`'leri okumak şarttı
+
+Önceki oturumda yalnızca `screen.png` ve `DESIGN.md` incelenmişti ve doküman "Stitch'te sayaç
+yok" diye **yanlış** bir tespit içeriyordu. Dört `code.html` okunduğunda hem sayaç hem de
+şu yapılar ortaya çıktı: `tailwind.config` token seti (tam), sabit üst bar, SVG halka ilerleme,
+akordiyonun üç durumu (`ring-2 ring-primary` / `check_circle` / `lock_clock`), soru matrisinin
+Aktif/Dolu/Boş renk kodlaması, "Pratik İpucu" kutusu, çizim araçları paneli, "Ders İçeriği"
+ağacı. **Ders:** ekran görüntüsünden tasarım uygulanamaz; kaynak markup okunmadan "birebir"
+iddia edilemez.
+
+### Yapılanlar
+
+1. **Tailwind v3 + Stitch config'i birebir** (`apps/web/tailwind.config.cjs`). Token adları
+   ve değerleri hiç değiştirilmedi → Stitch markup'ı doğrudan taşınabiliyor. Material Symbols
+   ikon fontu eklendi. *Takıntı notu:* paket `"type": "module"` olduğu için `postcss.config.js`
+   ESM (`export default`) olmak zorunda; `.cjs` uzantısını Next.js bulmuyor, `.mjs`'yi de
+   bulamadı — çalışan tek biçim ESM içerikli `postcss.config.js`. Config değişikliği
+   dev sunucu yeniden başlatması gerektiriyor.
+2. **`packages/progression`** (yeni, saf TS, React/DOM/ağ yok, 15 test): puan, günlük hedef,
+   seri, rozet, hata kitapçığı. `STAGE_POINTS.A1 = 0` — A1'in puanlanmaması artık testli bir
+   iddia. Seri cezalandırıcı değil: kırılınca 1'e döner, rekor korunur, kayıp dili yok.
+3. **A1 rakamsızlaştırıldı, hem şemada hem oyunlarda.** `content-schema`'ya `VisualSchema`
+   (şekil/renk/boyut) ve `a1IsNumberless` refine'ı eklendi; artık içerik yazarı A1'e sayı
+   koyarsa **JSON parse edilmiyor**. 4 konunun `a1` dizileri tamamen görsel görevlerle
+   yeniden yazıldı (terazide büyük/küçük şekiller, şekil-renk örüntüleri, kesikli çerçeveyi
+   döşeme). `packages/manipulatives/src/Visual.tsx` bu görsel alfabenin tek kaynağı.
+4. **A2'de hata kavramı kaldırıldı.** `SoftResult`'ta `danger` tonu diye bir şey yok; yanlış
+   cevapta Stitch'in "Pratik İpucu" kutusu kendiliğinden açılıyor.
+5. **Faz 3 = Stitch test ekranı** (`TestScreen.tsx`): 3/6/3 kolon, soru matrisi + legend,
+   karalama tahtası (veri kaydedilmez), "Ders İçeriği" ağacı, "Kaydet & Bitir". Sahte A–E
+   şıkkı uydurulmadı — cevap widget'ı görevin tipinden geliyor.
+6. **Ana sayfa, ders sayfası, analiz sayfası** Stitch düzenlerine birebir uyarlandı.
+   `app/(site)` route grubu açıldı; öğrenci kabuğu artık `/admin`'i sarmıyor.
+7. **`/admin/ayarlar`**: seri aç/kapa, puan aç/kapa, günlük hedef → `content/settings.json`.
+   Tarayıcıda test edildi: seri kapatılınca üst bardaki 🔥 rozeti kayboluyor.
+8. **Doğrulama:** `pnpm build` temiz (9 route), 38 test geçiyor (engine-core 9,
+   content-schema 14, progression 15), 4 konunun A1/A2/Faz-3 akışı tarayıcıda uçtan uca
+   oynandı.
+
+### Bilinen açık iş
+
+- `pnpm -r test` paketleri bulamıyor ("no tests"); paket paket `pnpm --filter ... test`
+  çalışıyor. Küçük bir betik/turbo aksaklığı, düzeltilmesi gerek.
+- "AI Yardım" butonu hiç konmadı — Stitch'in test ekranında da yok (orada "İpucu Al" var,
+  o bizde A2'de mevcut). Kullanıcının paylaştığı ekran görüntüsündeki "AI Yardım" farklı bir
+  mockup'tan; gerçek LLM entegrasyonu hâlâ backlog.
+- Kullanıcının verdiği ders kitabı örneği (tekne/iskele, "kaç farklı yol") tam olarak bir
+  **yol/uzamsal** mekaniği; mevcut üç mekanik A1'de rakamsız çalışıyor ama bu dördüncü tür
+  hâlâ yok. Sonraki genişleme adayı.

@@ -28,6 +28,14 @@ export default function AdminHomePage() {
           </li>
         ))}
       </ul>
+
+      <h2>Ayarlar</h2>
+      <ul className="admin-course-list">
+        <li>
+          <Link href="/admin/ayarlar">Oyunlaştırma Ayarları</Link>
+          <span className="admin-stat">Seri (streak) aç/kapa · puan sayacı · günlük hedef</span>
+        </li>
+      </ul>
     </main>
   );
 }

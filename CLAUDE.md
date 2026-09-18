@@ -18,12 +18,13 @@ TYMM 5. sınıf matematik bu platformun ilk doldurulmuş kursu. Yeni ders/konu e
 gerektirmemeli; bu yüzden içerik yönetimi için bir **admin panel** (`apps/studio`) mimarisi de
 baştan tasarlanıyor, önceliği Faz 2'den öne çekildi.
 
-**Durum (2026-09-18 güncellendi, 2 kez):** Faz 0 hızlandırıldı, 4 konu uçtan uca çalışır hâle
-getirildi (A1→A2→A3→Assessment, `pnpm build` temiz) — ama **arayüz kullanıcının kastettiği
-sistemle uyuşmuyordu** (A1'de sayı olmamalıydı, gerçek test ekranı eksikti, Stitch tasarımı
-sadece renk olarak alınmıştı). Kullanıcı düzeltme verdi (K14) — **düzeltilmiş plan yazıldı,
-henüz uygulanmadı.** Sıradaki iş bu planı uygulamak. Detay ve TODO listesi:
-`agents-notes/09-arayuz-yeniden-tasarim-v2.md` (önce oku — §5 TODO tablosu).
+**Durum (2026-09-18, oturum 003):** `09-arayuz-yeniden-tasarim-v2.md` §5 TODO listesi
+**uygulandı.** 4 konu Stitch tasarımına birebir uyarlanmış üç fazlı akışla uçtan uca
+oynanabilir: **Faz 1 Keşfet (rakamsız, tamamen görsel)** → **Faz 2 Bağla (sayılar girer,
+yanlış yok, sistem ipucu açar)** → **Faz 3 Gerçek Teste Hazırlık (Stitch test ekranı:
+soru matrisi + karalama tahtası + Ders İçeriği paneli)**. Puan/günlük hedef/seri/rozet/hata
+kitapçığı var, admin panelden (`/admin/ayarlar`) açılıp kapanıyor. `pnpm build` temiz,
+38 test geçiyor. Detay: `agents-notes/09-arayuz-yeniden-tasarim-v2.md` + oturum günlüğü.
 
 ---
 
@@ -31,7 +32,7 @@ henüz uygulanmadı.** Sıradaki iş bu planı uygulamak. Detay ve TODO listesi:
 
 | Sıra | Dosya | Ne için |
 |---|---|---|
-| 0 | `agents-notes/09-arayuz-yeniden-tasarim-v2.md` | **EN GÜNCEL — arayüz düzeltme planı, TODO §5** |
+| 0 | `agents-notes/09-arayuz-yeniden-tasarim-v2.md` | **EN GÜNCEL — arayüz sözleşmesi: 3 faz, Stitch birebir uyum, K14/K15** |
 | 1 | `README.md` | Ürünün ne olduğu, 3 ilke, mimari özet |
 | 2 | `agents-notes/00-oturum-gunlugu.md` | Alınan 7 karar + **cevaplanmamış 5 açık soru** |
 | 3 | `agents-notes/03-pedagojik-mimari.md` | Çekirdek döngü + **yasaklı desenler** (§5 — kırmızı çizgi) |
@@ -56,18 +57,29 @@ Bunlar tercih değil, pedagojik/etik sınır. Bir değişiklik bunlardan birini 
 
 - **A3 (soyut) ve ASSESSMENT (Konu Sonu Testi) aşamalarında süre sınırı olamaz.** `timeLimit`
   alanı şemada bu ikisi için tanımlı değildir ve tanımlanmayacaktır. Süreli matematik testi
-  kaygı üretiyor. (Opsiyonel, varsayılan kapalı, veli/öğretmen açarsa görünen süreli pratik modu
+  kaygı üretiyor. **K15 (2026-09-18):** Stitch test ekranında çalışan bir 14:25 geri sayım
+  sayacı vardı; "tasarıma birebir uy" talimatıyla çakıştığı kullanıcıya bildirildi ve kullanıcı
+  **sayacı koymama** kararı verdi. Test ekranında sayaç yerine "Süre sınırı yok" rozeti ve
+  "n / m Soru" ilerlemesi var. Bu, tasarımdan bilinçli ve tek sapmadır.
+  (Opsiyonel, varsayılan kapalı, veli/öğretmen açarsa görünen süreli pratik modu
   Faz 2 backlog'unda — bkz. `agents-notes/08-genisletilmis-platform-mimarisi.md` §3. Bu backlog
   maddesi bu kuralı bozmaz çünkü ayrı ve isteğe bağlıdır.)
-- **A1 (somut) aşamasında puan, skor, kırmızı X, "yanlış" sesi olamaz.** Hata diegetic
-  olmalı: terazi eğilir, köprü sallanır.
+- **A1 (somut/Keşfet) aşamasında RAKAM olamaz.** Puan, skor, kırmızı X, "yanlış" sesi de yok.
+  Hata diegetic olmalı: terazi eğilir, çerçeve dolar. Görevler tamamen görsel dille kurulur
+  (şekil/renk/boyut) — bu kural `content-schema`'daki `a1IsNumberless` refine'ı ile **şema
+  düzeyinde zorlanır**, içerik yazarı yanlışlıkla sayı koyamaz.
+- **A2 (Bağla) aşamasında "yanlış" geri bildirimi olamaz.** Kırmızı uyarı yerine sistem
+  ipucunu kendiliğinden açar (Stitch'in "Pratik İpucu" kutusu). Kullanıcı talimatı:
+  "burda hata yoktur, tip verir sistem."
 - **Genel lider tablosu yok (backlog — kullanıcı erteledi).** **Seri (streak) sistemi VAR**
   — kullanıcının 2026-09-18 tarihli açık, bilgilendirilmiş kararıyla (K14,
   `agents-notes/09-arayuz-yeniden-tasarim-v2.md` §2) bu kural gevşetildi: admin panelden
-  aç/kapa anahtarlı, varsayılan açık, kullanıcı davranış verisi toplanınca gözden geçirilecek.
-  Puan sayacı, rozetler, hata kitapçığı da eklenecek (aynı karar). **A1 oyun ekranının içinde
-  puan/seri gösterilmez** — bunlar genel navigasyonda (üst bar, ana sayfa) kalır, bu ayrım
-  değişmedi. Can/enerji sistemi, şans kutusu **hâlâ yasak.**
+  aç/kapa anahtarlı (`/admin/ayarlar` → `content/settings.json`), varsayılan açık, kullanıcı
+  davranış verisi toplanınca gözden geçirilecek. Puan sayacı, rozetler, hata kitapçığı da
+  **eklendi** (aynı karar, `packages/progression`). **A1 oyun ekranının içinde puan/seri
+  gösterilmez ve A1 hiç puan vermez** (`STAGE_POINTS.A1 = 0`, testli) — bunlar genel
+  navigasyonda (üst bar, ana sayfa) kalır, bu ayrım değişmedi. Can/enerji sistemi, şans kutusu
+  **hâlâ yasak.**
 - **Öğrenme içeriğini kilitleyen ücretli katman yok.** Ödeme yalnızca kozmetik olabilir.
 - **Çocuğa gösterilen satın alma çağrısı yok, reklam yok, açık sohbet yok.**
 - **Çocuktan e-posta, tam ad, doğum tarihi, konum toplanmaz.** Takma ad + sınıf düzeyi.
@@ -95,12 +107,21 @@ packages/engine-core/   ⭐ saf TypeScript. React YOK, DOM YOK, ağ YOK. VAR (20
 packages/curriculum/    TYMM verisi (23 çıktı, süreç bileşenleri). JSON tabanlı yükleyici. VAR.
 packages/content-schema/Zod şemaları (task.ts) + loader.ts. Kırmızı çizgiler burada zorlanır. VAR.
 packages/manipulatives/ React: BalanceGame ("Yankı Kapısı"), GridGame ("Harita Kâşifi"),
-                           PatternGame ("Örüntü Anahtarı"). VAR (2026-09-18).
-packages/ui-kit/        Paylaşılan tasarım tokenları (bkz. §Görsel kimlik altta). VAR.
-apps/web/               Next.js 15 — TEK uygulama. `/` `/[subject]` `/[subject]/[outcome]`
-                           (öğrenci) + `/admin/...` (içerik masası, eski apps/studio —
-                           2026-09-18'de buraya taşındı, ayrı app yok artık).
+                           PatternGame ("Örüntü Anahtarı") + Visual.tsx (A1'in rakamsız
+                           görsel alfabesi) + shell.tsx (ortak Prompt/HintCard/AnswerPad).
+                           Her oyun `stage` prop'u alır; görsel dil tamamen ona bağlı. VAR.
+packages/progression/   ⭐ saf TypeScript. Puan, günlük hedef, seri (streak), rozet, hata
+                           kitapçığı. React/DOM/ağ YOK. 15 test. VAR (2026-09-18).
+packages/ui-kit/        Eski tasarım tokenları — artık yalnızca /admin'in elle yazılmış CSS'i
+                           kullanıyor. Öğrenci tarafı Tailwind + Stitch config'i kullanır.
+apps/web/               Next.js 15 + **Tailwind v3** (config = Stitch'in kendi config'inin
+                           birebir kopyası, `tailwind.config.cjs`). TEK uygulama:
+                             app/(site)/   öğrenci kabuğu — `/`, `/[subject]`,
+                                           `/[subject]/[outcome]`, `/[subject]/analiz`
+                             app/admin/    içerik masası + `/admin/ayarlar` (K14 anahtarları)
+                             app/lib/      ProgressProvider, SiteChrome, course, settings, topics
 content/matematik/tymm-5/tasks/  4 konunun görev JSON'u (MAT.5.2.1, 5.2.3, 5.4.1, 5.4.2).
+content/settings.json            Oyunlaştırma anahtarları (admin panel yazar).
 ```
 
 **`engine-core` içine React, DOM API'si veya ağ çağrısı eklemek mimariyi bozar.** Bu paketin
@@ -115,18 +136,34 @@ görevi parse ederken zorluyor (uyumsuz JSON atılırsa throw eder), CLI sarmala
 
 ## Görsel kimlik
 
-Renk paleti ve tipografi (`packages/ui-kit/src/tokens.css`) kullanıcının verdiği Stitch
-tasarımından ("Vibrant Junior Learn" — mor/camgöbeği/zümrüt/amber, Plus Jakarta Sans, pilli
-butonlar) referans alındı. **Bilinçli olarak alınmayanlar** (kırmızı çizgilerle çelişiyor,
-kullanıcıya soruldu, henüz cevap yok): "+50 Puan" tarzı puan rozetleri, seri (streak) sayaçları,
-A/B/C/D sınav-navigator ızgarası. Bu üçü uygulanmadı. Detay: `00-oturum-gunlugu.md` Oturum 002
-devam 4.
+Kullanıcının verdiği Stitch tasarımına ("Vibrant Junior Learn") **birebir uyuluyor** — sadece
+renk değil, ekran düzenleri de. Kaynak: proje kökündeki
+`stitch_i_lk_retim_etkile_imli_renme_portal.zip` (gitignore'da) içindeki 4 ekranın
+`code.html` dosyaları. Token'lar `apps/web/tailwind.config.cjs`'e **hiç değiştirilmeden**
+kopyalandı (`primary`, `surface-container-lowest`, `font-label-md`, `space-md` … adları aynı),
+böylece Stitch markup'ı doğrudan taşınabiliyor. İkonlar Material Symbols Outlined.
+
+**Tasarımdan bilinçli sapmalar** (hepsi kullanıcı onaylı, gerekçeli):
+1. **Geri sayım sayacı yok** — K15, kırmızı çizgi (yukarıda).
+2. **Haftalık liderlik tablosu yok** — K14, kullanıcı erteledi. Ana sayfada o kartın yerinde
+   "Kanıt Panom" var (hangi süreç bileşeni kanıtlandı).
+3. **Canlı Soru-Cevap Odası kartı görsel olarak duruyor ama pasif** — arkasında öğretmen
+   altyapısı yok; kullanıcı "görsel olarak koy, pasif" dedi.
+4. **Sahte A–E şıkkı uydurulmadı** — test ekranının kabuğu birebir, içindeki cevap widget'ı
+   görevin kendi tipinden geliyor (sayı girişi / görsel seçim).
+5. Boş ders kartı yok: Stitch'te 5 ders vardı, bizde gerçek içeriği olan Matematik + onun
+   6 ünitesi gösteriliyor.
 
 ## Çalışma kuralları
 
-- **Yığın:** TypeScript (strict) · Next.js 15 · React 19 · Framer Motion · Zod · pnpm +
-  Turborepo · Vitest. (Tailwind/Prisma/Postgres henüz kullanılmadı — Faz 0 localStorage
-  yeterli kararına göre; CSS elle, `packages/ui-kit` tokenlarıyla yazılıyor.)
+- **Yığın:** TypeScript (strict) · Next.js 15 · React 19 · **Tailwind v3** · Framer Motion ·
+  Zod · pnpm + Turborepo · Vitest. Prisma/Postgres yok — Faz 0'da öğrenci ilerlemesi
+  `localStorage`'da (`mk.progress.v1`), ayarlar `content/settings.json`'da.
+  **Tailwind kararı (K16, 2026-09-18):** Stitch tasarımı Tailwind ile yazılmış; "birebir uy"
+  talimatını karşılamanın tek dürüst yolu aynı config'i kullanmaktı. `/admin` hâlâ elle
+  yazılmış `admin.css` kullanıyor, ona dokunulmadı.
+- **Test komutu:** `pnpm -r test` şu an paketleri doğru bulamıyor (bilinen aksaklık);
+  paket paket çalıştır: `pnpm --filter @matematik-kasifleri/<paket> test`.
 - **Dil:** Kod ve teknik yorumlar İngilizce; dokümanlar, içerik ve kullanıcıya görünen her
   metin Türkçe. Çocuğa görünen metinlerde kaygı kelimeleri yok ("sınav", "yanlış",
   "başarısız", "kaybettin" → "usta görevi", "bu sefer olmadı", "tekrar bak").

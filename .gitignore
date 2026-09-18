@@ -1,0 +1,44 @@
+# Bağımlılıklar
+node_modules/
+.pnp.*
+.yarn/
+
+# Derleme çıktıları
+dist/
+build/
+.next/
+out/
+.turbo/
+*.tsbuildinfo
+
+# Ortam
+.env
+.env.*
+!.env.example
+
+# Test / kapsam
+coverage/
+playwright-report/
+test-results/
+.vitest/
+
+# Editör / işletim sistemi
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Loglar
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Kaynak PDF'leri (boyut — bkz. agents-notes/kaynaklar/README.md)
+*.pdf
+!docs/**/*.pdf
+
+# Geçici
+tmp/
+.scratch/

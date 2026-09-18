@@ -99,7 +99,10 @@ Gerekçeler: [`agents-notes/03-pedagojik-mimari.md`](agents-notes/03-pedagojik-m
 
 ## Dokümantasyon
 
-Bu projenin tüm analiz, karar ve gerekçeleri `agents-notes/` altında:
+Depoyu yeni klonladıysan: [`CLAUDE.md`](CLAUDE.md) projeye giriş noktasıdır — okuma sırası,
+değiştirilemez kurallar ve mimari sınırlar orada. Claude Code bu dosyayı otomatik okur.
+
+Tüm analiz, karar ve gerekçeler `agents-notes/` altında:
 
 | Dosya | İçerik |
 |---|---|

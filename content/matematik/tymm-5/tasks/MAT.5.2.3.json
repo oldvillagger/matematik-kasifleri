@@ -1,34 +1,572 @@
 {
   "a1": [
-    { "id": "5.2.3-a1-1", "outcome": "MAT.5.2.3", "componentCode": "a", "stage": "A1", "prompt": "Örüntüyü izle. Bir sonraki hangisi olabilir dersin?", "hints": [], "game": "pattern", "setup": { "sequence": [2, 4, 6], "choices": [7, 8, 9], "answer": 8 } },
-    { "id": "5.2.3-a1-2", "outcome": "MAT.5.2.3", "componentCode": "a", "stage": "A1", "prompt": "Bu örüntüde ne değişiyor? Sonraki terimi seç.", "hints": [], "game": "pattern", "setup": { "sequence": [3, 6, 9], "choices": [11, 12, 13], "answer": 12 } },
-    { "id": "5.2.3-a1-3", "outcome": "MAT.5.2.3", "componentCode": "b", "stage": "A1", "prompt": "Kuralı bul, devam ettir.", "hints": [], "game": "pattern", "setup": { "sequence": [1, 3, 5], "choices": [6, 7, 8], "answer": 7 } },
-    { "id": "5.2.3-a1-4", "outcome": "MAT.5.2.3", "componentCode": "b", "stage": "A1", "prompt": "Bu örüntü azalıyor. Sıradaki ne?", "hints": [], "game": "pattern", "setup": { "sequence": [10, 8, 6], "choices": [3, 4, 5], "answer": 4 } }
+    {
+      "id": "5.2.3-a1-1",
+      "outcome": "MAT.5.2.3",
+      "componentCode": "a",
+      "stage": "A1",
+      "prompt": "Şekiller belli bir sırayla tekrar ediyor. Boşluğa hangisi gelmeli?",
+      "hints": [],
+      "game": "pattern",
+      "setup": {
+        "visualSequence": [
+          {
+            "shape": "circle",
+            "color": "violet",
+            "size": "md"
+          },
+          {
+            "shape": "square",
+            "color": "cyan",
+            "size": "md"
+          },
+          {
+            "shape": "circle",
+            "color": "violet",
+            "size": "md"
+          },
+          {
+            "shape": "square",
+            "color": "cyan",
+            "size": "md"
+          }
+        ],
+        "visualChoices": [
+          {
+            "shape": "circle",
+            "color": "violet",
+            "size": "md"
+          },
+          {
+            "shape": "square",
+            "color": "cyan",
+            "size": "md"
+          },
+          {
+            "shape": "triangle",
+            "color": "amber",
+            "size": "md"
+          }
+        ],
+        "answerIndex": 0
+      }
+    },
+    {
+      "id": "5.2.3-a1-2",
+      "outcome": "MAT.5.2.3",
+      "componentCode": "a",
+      "stage": "A1",
+      "prompt": "Bu dizide şekil değişmiyor — başka bir şey değişiyor. Sıradaki hangisi?",
+      "hints": [],
+      "game": "pattern",
+      "setup": {
+        "visualSequence": [
+          {
+            "shape": "triangle",
+            "color": "emerald",
+            "size": "sm"
+          },
+          {
+            "shape": "triangle",
+            "color": "emerald",
+            "size": "md"
+          },
+          {
+            "shape": "triangle",
+            "color": "emerald",
+            "size": "lg"
+          },
+          {
+            "shape": "triangle",
+            "color": "emerald",
+            "size": "sm"
+          }
+        ],
+        "visualChoices": [
+          {
+            "shape": "triangle",
+            "color": "emerald",
+            "size": "lg"
+          },
+          {
+            "shape": "triangle",
+            "color": "emerald",
+            "size": "md"
+          },
+          {
+            "shape": "triangle",
+            "color": "emerald",
+            "size": "sm"
+          }
+        ],
+        "answerIndex": 1
+      }
+    },
+    {
+      "id": "5.2.3-a1-3",
+      "outcome": "MAT.5.2.3",
+      "componentCode": "b",
+      "stage": "A1",
+      "prompt": "Kural biraz daha uzun. Dikkatli bak: tekrar eden grup hangisi?",
+      "hints": [],
+      "game": "pattern",
+      "setup": {
+        "visualSequence": [
+          {
+            "shape": "star",
+            "color": "amber",
+            "size": "md"
+          },
+          {
+            "shape": "star",
+            "color": "amber",
+            "size": "md"
+          },
+          {
+            "shape": "hexagon",
+            "color": "violet",
+            "size": "md"
+          },
+          {
+            "shape": "star",
+            "color": "amber",
+            "size": "md"
+          },
+          {
+            "shape": "star",
+            "color": "amber",
+            "size": "md"
+          }
+        ],
+        "visualChoices": [
+          {
+            "shape": "hexagon",
+            "color": "violet",
+            "size": "md"
+          },
+          {
+            "shape": "star",
+            "color": "amber",
+            "size": "md"
+          },
+          {
+            "shape": "diamond",
+            "color": "rose",
+            "size": "md"
+          }
+        ],
+        "answerIndex": 0
+      }
+    },
+    {
+      "id": "5.2.3-a1-4",
+      "outcome": "MAT.5.2.3",
+      "componentCode": "b",
+      "stage": "A1",
+      "prompt": "Hem şekil hem renk dönüyor. Boşluğa ne gelir?",
+      "hints": [],
+      "game": "pattern",
+      "setup": {
+        "visualSequence": [
+          {
+            "shape": "diamond",
+            "color": "rose",
+            "size": "md"
+          },
+          {
+            "shape": "hexagon",
+            "color": "cyan",
+            "size": "md"
+          },
+          {
+            "shape": "square",
+            "color": "emerald",
+            "size": "md"
+          },
+          {
+            "shape": "diamond",
+            "color": "rose",
+            "size": "md"
+          },
+          {
+            "shape": "hexagon",
+            "color": "cyan",
+            "size": "md"
+          }
+        ],
+        "visualChoices": [
+          {
+            "shape": "diamond",
+            "color": "rose",
+            "size": "md"
+          },
+          {
+            "shape": "square",
+            "color": "emerald",
+            "size": "md"
+          },
+          {
+            "shape": "hexagon",
+            "color": "cyan",
+            "size": "md"
+          }
+        ],
+        "answerIndex": 1
+      }
+    }
   ],
   "a2": [
-    { "id": "5.2.3-a2-1", "outcome": "MAT.5.2.3", "componentCode": "c", "stage": "A2", "prompt": "Kuralını sına: sıradaki terim ne?", "hints": ["Her adımda 5 ekleniyor."], "game": "pattern", "setup": { "sequence": [5, 10, 15], "choices": [18, 20, 22], "answer": 20 } },
-    { "id": "5.2.3-a2-2", "outcome": "MAT.5.2.3", "componentCode": "c", "stage": "A2", "prompt": "Kural hâlâ geçerli mi? Devam ettir.", "hints": ["Her adımda 3 ekleniyor."], "game": "pattern", "setup": { "sequence": [2, 5, 8], "choices": [10, 11, 12], "answer": 11 } },
-    { "id": "5.2.3-a2-3", "outcome": "MAT.5.2.3", "componentCode": "ç", "stage": "A2", "prompt": "Kuralı sembolle düşün: sıradaki ne?", "hints": ["Her adımda 10 azalıyor."], "game": "pattern", "setup": { "sequence": [100, 90, 80], "choices": [65, 70, 75], "answer": 70 } },
-    { "id": "5.2.3-a2-4", "outcome": "MAT.5.2.3", "componentCode": "ç", "stage": "A2", "prompt": "Kuralı sembolle yaz, sıradaki terimi bul.", "hints": ["Her adımda 4 ekleniyor."], "game": "pattern", "setup": { "sequence": [4, 8, 12], "choices": [14, 16, 18], "answer": 16 } }
+    {
+      "id": "5.2.3-a2-1",
+      "outcome": "MAT.5.2.3",
+      "componentCode": "c",
+      "stage": "A2",
+      "prompt": "Kuralını sına: sıradaki terim ne?",
+      "hints": [
+        "Her adımda 5 ekleniyor."
+      ],
+      "game": "pattern",
+      "setup": {
+        "sequence": [
+          5,
+          10,
+          15
+        ],
+        "choices": [
+          18,
+          20,
+          22
+        ],
+        "answer": 20
+      }
+    },
+    {
+      "id": "5.2.3-a2-2",
+      "outcome": "MAT.5.2.3",
+      "componentCode": "c",
+      "stage": "A2",
+      "prompt": "Kural hâlâ geçerli mi? Devam ettir.",
+      "hints": [
+        "Her adımda 3 ekleniyor."
+      ],
+      "game": "pattern",
+      "setup": {
+        "sequence": [
+          2,
+          5,
+          8
+        ],
+        "choices": [
+          10,
+          11,
+          12
+        ],
+        "answer": 11
+      }
+    },
+    {
+      "id": "5.2.3-a2-3",
+      "outcome": "MAT.5.2.3",
+      "componentCode": "ç",
+      "stage": "A2",
+      "prompt": "Kuralı sembolle düşün: sıradaki ne?",
+      "hints": [
+        "Her adımda 10 azalıyor."
+      ],
+      "game": "pattern",
+      "setup": {
+        "sequence": [
+          100,
+          90,
+          80
+        ],
+        "choices": [
+          65,
+          70,
+          75
+        ],
+        "answer": 70
+      }
+    },
+    {
+      "id": "5.2.3-a2-4",
+      "outcome": "MAT.5.2.3",
+      "componentCode": "ç",
+      "stage": "A2",
+      "prompt": "Kuralı sembolle yaz, sıradaki terimi bul.",
+      "hints": [
+        "Her adımda 4 ekleniyor."
+      ],
+      "game": "pattern",
+      "setup": {
+        "sequence": [
+          4,
+          8,
+          12
+        ],
+        "choices": [
+          14,
+          16,
+          18
+        ],
+        "answer": 16
+      }
+    }
   ],
   "a3": [
-    { "id": "5.2.3-a3-1", "outcome": "MAT.5.2.3", "componentCode": "d", "stage": "A3", "prompt": "Sıradaki terim ne?", "hints": [], "game": "pattern", "setup": { "sequence": [7, 14, 21], "choices": [26, 28, 30], "answer": 28 } },
-    { "id": "5.2.3-a3-2", "outcome": "MAT.5.2.3", "componentCode": "d", "stage": "A3", "prompt": "Örüntüyü tamamla.", "hints": [], "game": "pattern", "setup": { "sequence": [50, 45, 40], "choices": [30, 35, 38], "answer": 35 } },
-    { "id": "5.2.3-a3-3", "outcome": "MAT.5.2.3", "componentCode": "e", "stage": "A3", "prompt": "Kuralın her zaman geçerli olduğuna dair örnek ver.", "hints": [], "game": "pattern", "setup": { "sequence": [6, 12, 18], "choices": [22, 24, 26], "answer": 24 } },
-    { "id": "5.2.3-a3-4", "outcome": "MAT.5.2.3", "componentCode": "e", "stage": "A3", "prompt": "Sıradaki terim ne?", "hints": [], "game": "pattern", "setup": { "sequence": [9, 18, 27], "choices": [33, 36, 39], "answer": 36 } }
+    {
+      "id": "5.2.3-a3-1",
+      "outcome": "MAT.5.2.3",
+      "componentCode": "d",
+      "stage": "A3",
+      "prompt": "Sıradaki terim ne?",
+      "hints": [],
+      "game": "pattern",
+      "setup": {
+        "sequence": [
+          7,
+          14,
+          21
+        ],
+        "choices": [
+          26,
+          28,
+          30
+        ],
+        "answer": 28
+      }
+    },
+    {
+      "id": "5.2.3-a3-2",
+      "outcome": "MAT.5.2.3",
+      "componentCode": "d",
+      "stage": "A3",
+      "prompt": "Örüntüyü tamamla.",
+      "hints": [],
+      "game": "pattern",
+      "setup": {
+        "sequence": [
+          50,
+          45,
+          40
+        ],
+        "choices": [
+          30,
+          35,
+          38
+        ],
+        "answer": 35
+      }
+    },
+    {
+      "id": "5.2.3-a3-3",
+      "outcome": "MAT.5.2.3",
+      "componentCode": "e",
+      "stage": "A3",
+      "prompt": "Kuralın her zaman geçerli olduğuna dair örnek ver.",
+      "hints": [],
+      "game": "pattern",
+      "setup": {
+        "sequence": [
+          6,
+          12,
+          18
+        ],
+        "choices": [
+          22,
+          24,
+          26
+        ],
+        "answer": 24
+      }
+    },
+    {
+      "id": "5.2.3-a3-4",
+      "outcome": "MAT.5.2.3",
+      "componentCode": "e",
+      "stage": "A3",
+      "prompt": "Sıradaki terim ne?",
+      "hints": [],
+      "game": "pattern",
+      "setup": {
+        "sequence": [
+          9,
+          18,
+          27
+        ],
+        "choices": [
+          33,
+          36,
+          39
+        ],
+        "answer": 36
+      }
+    }
   ],
   "assessment": {
     "id": "5.2.3-assessment",
     "outcome": "MAT.5.2.3",
     "items": [
-      { "id": "5.2.3-as-1", "outcome": "MAT.5.2.3", "componentCode": "c", "prompt": "3, 6, 9, ... sıradaki?", "game": "pattern", "setup": { "sequence": [3, 6, 9], "choices": [11, 12, 13], "answer": 12 } },
-      { "id": "5.2.3-as-2", "outcome": "MAT.5.2.3", "componentCode": "c", "prompt": "10, 20, 30, ... sıradaki?", "game": "pattern", "setup": { "sequence": [10, 20, 30], "choices": [35, 40, 45], "answer": 40 } },
-      { "id": "5.2.3-as-3", "outcome": "MAT.5.2.3", "componentCode": "ç", "prompt": "5, 9, 13, ... sıradaki?", "game": "pattern", "setup": { "sequence": [5, 9, 13], "choices": [15, 17, 19], "answer": 17 } },
-      { "id": "5.2.3-as-4", "outcome": "MAT.5.2.3", "componentCode": "ç", "prompt": "8, 16, 24, ... sıradaki?", "game": "pattern", "setup": { "sequence": [8, 16, 24], "choices": [30, 32, 34], "answer": 32 } },
-      { "id": "5.2.3-as-5", "outcome": "MAT.5.2.3", "componentCode": "d", "prompt": "100, 95, 90, ... sıradaki?", "game": "pattern", "setup": { "sequence": [100, 95, 90], "choices": [80, 85, 87], "answer": 85 } },
-      { "id": "5.2.3-as-6", "outcome": "MAT.5.2.3", "componentCode": "d", "prompt": "2, 6, 10, ... sıradaki?", "game": "pattern", "setup": { "sequence": [2, 6, 10], "choices": [12, 14, 16], "answer": 14 } },
-      { "id": "5.2.3-as-7", "outcome": "MAT.5.2.3", "componentCode": "e", "prompt": "12, 24, 36, ... sıradaki?", "game": "pattern", "setup": { "sequence": [12, 24, 36], "choices": [42, 48, 50], "answer": 48 } },
-      { "id": "5.2.3-as-8", "outcome": "MAT.5.2.3", "componentCode": "e", "prompt": "7, 14, 21, ... sıradaki?", "game": "pattern", "setup": { "sequence": [7, 14, 21], "choices": [26, 28, 30], "answer": 28 } }
+      {
+        "id": "5.2.3-as-1",
+        "outcome": "MAT.5.2.3",
+        "componentCode": "c",
+        "prompt": "3, 6, 9, ... sıradaki?",
+        "game": "pattern",
+        "setup": {
+          "sequence": [
+            3,
+            6,
+            9
+          ],
+          "choices": [
+            11,
+            12,
+            13
+          ],
+          "answer": 12
+        }
+      },
+      {
+        "id": "5.2.3-as-2",
+        "outcome": "MAT.5.2.3",
+        "componentCode": "c",
+        "prompt": "10, 20, 30, ... sıradaki?",
+        "game": "pattern",
+        "setup": {
+          "sequence": [
+            10,
+            20,
+            30
+          ],
+          "choices": [
+            35,
+            40,
+            45
+          ],
+          "answer": 40
+        }
+      },
+      {
+        "id": "5.2.3-as-3",
+        "outcome": "MAT.5.2.3",
+        "componentCode": "ç",
+        "prompt": "5, 9, 13, ... sıradaki?",
+        "game": "pattern",
+        "setup": {
+          "sequence": [
+            5,
+            9,
+            13
+          ],
+          "choices": [
+            15,
+            17,
+            19
+          ],
+          "answer": 17
+        }
+      },
+      {
+        "id": "5.2.3-as-4",
+        "outcome": "MAT.5.2.3",
+        "componentCode": "ç",
+        "prompt": "8, 16, 24, ... sıradaki?",
+        "game": "pattern",
+        "setup": {
+          "sequence": [
+            8,
+            16,
+            24
+          ],
+          "choices": [
+            30,
+            32,
+            34
+          ],
+          "answer": 32
+        }
+      },
+      {
+        "id": "5.2.3-as-5",
+        "outcome": "MAT.5.2.3",
+        "componentCode": "d",
+        "prompt": "100, 95, 90, ... sıradaki?",
+        "game": "pattern",
+        "setup": {
+          "sequence": [
+            100,
+            95,
+            90
+          ],
+          "choices": [
+            80,
+            85,
+            87
+          ],
+          "answer": 85
+        }
+      },
+      {
+        "id": "5.2.3-as-6",
+        "outcome": "MAT.5.2.3",
+        "componentCode": "d",
+        "prompt": "2, 6, 10, ... sıradaki?",
+        "game": "pattern",
+        "setup": {
+          "sequence": [
+            2,
+            6,
+            10
+          ],
+          "choices": [
+            12,
+            14,
+            16
+          ],
+          "answer": 14
+        }
+      },
+      {
+        "id": "5.2.3-as-7",
+        "outcome": "MAT.5.2.3",
+        "componentCode": "e",
+        "prompt": "12, 24, 36, ... sıradaki?",
+        "game": "pattern",
+        "setup": {
+          "sequence": [
+            12,
+            24,
+            36
+          ],
+          "choices": [
+            42,
+            48,
+            50
+          ],
+          "answer": 48
+        }
+      },
+      {
+        "id": "5.2.3-as-8",
+        "outcome": "MAT.5.2.3",
+        "componentCode": "e",
+        "prompt": "7, 14, 21, ... sıradaki?",
+        "game": "pattern",
+        "setup": {
+          "sequence": [
+            7,
+            14,
+            21
+          ],
+          "choices": [
+            26,
+            28,
+            30
+          ],
+          "answer": 28
+        }
+      }
     ]
   }
 }

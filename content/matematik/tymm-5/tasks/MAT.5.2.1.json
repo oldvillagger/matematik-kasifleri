@@ -1,34 +1,624 @@
 {
   "a1": [
-    { "id": "5.2.1-a1-1", "outcome": "MAT.5.2.1", "componentCode": "a", "stage": "A1", "prompt": "Sağ ve sol taraf dengede mi görünüyor? Tahmin et, sonra tart.", "hints": [], "game": "balance", "setup": { "left": [{ "label": "5", "value": 5 }], "right": [{ "label": "2", "value": 2 }, { "label": "3", "value": 3 }], "mirrorMode": false } },
-    { "id": "5.2.1-a1-2", "outcome": "MAT.5.2.1", "componentCode": "a", "stage": "A1", "prompt": "Bu terazi dengede mi? Tahmin et, sonra dene.", "hints": [], "game": "balance", "setup": { "left": [{ "label": "7", "value": 7 }], "right": [{ "label": "4", "value": 4 }, { "label": "2", "value": 2 }], "mirrorMode": false } },
-    { "id": "5.2.1-a1-3", "outcome": "MAT.5.2.1", "componentCode": "b", "stage": "A1", "prompt": "İki tarafa da aynı taşı ekle. Denge bozulur mu?", "hints": [], "game": "balance", "setup": { "left": [{ "label": "6", "value": 6 }], "right": [{ "label": "6", "value": 6 }], "mirrorMode": true } },
-    { "id": "5.2.1-a1-4", "outcome": "MAT.5.2.1", "componentCode": "b", "stage": "A1", "prompt": "Bu kez farklı bir denge kur, aynı kuralı dene.", "hints": [], "game": "balance", "setup": { "left": [{ "label": "9", "value": 9 }], "right": [{ "label": "9", "value": 9 }], "mirrorMode": true } }
+    {
+      "id": "5.2.1-a1-1",
+      "outcome": "MAT.5.2.1",
+      "componentCode": "a",
+      "stage": "A1",
+      "prompt": "Kapının iki kefesine bak. Sence hangi taraf ağır basar? Tahmin et, sonra karşılaştır.",
+      "hints": [],
+      "game": "balance",
+      "setup": {
+        "left": [
+          {
+            "label": "",
+            "value": 3,
+            "visual": {
+              "shape": "hexagon",
+              "color": "violet",
+              "size": "lg"
+            }
+          }
+        ],
+        "right": [
+          {
+            "label": "",
+            "value": 2,
+            "visual": {
+              "shape": "hexagon",
+              "color": "violet",
+              "size": "md"
+            }
+          },
+          {
+            "label": "",
+            "value": 1,
+            "visual": {
+              "shape": "hexagon",
+              "color": "violet",
+              "size": "sm"
+            }
+          }
+        ],
+        "mirrorMode": false
+      }
+    },
+    {
+      "id": "5.2.1-a1-2",
+      "outcome": "MAT.5.2.1",
+      "componentCode": "a",
+      "stage": "A1",
+      "prompt": "Bu kez şekiller farklı. Kapı dengede kalır mı, yoksa bir yana mı eğilir?",
+      "hints": [],
+      "game": "balance",
+      "setup": {
+        "left": [
+          {
+            "label": "",
+            "value": 3,
+            "visual": {
+              "shape": "square",
+              "color": "emerald",
+              "size": "lg"
+            }
+          }
+        ],
+        "right": [
+          {
+            "label": "",
+            "value": 2,
+            "visual": {
+              "shape": "square",
+              "color": "emerald",
+              "size": "md"
+            }
+          },
+          {
+            "label": "",
+            "value": 2,
+            "visual": {
+              "shape": "square",
+              "color": "emerald",
+              "size": "md"
+            }
+          }
+        ],
+        "mirrorMode": false
+      }
+    },
+    {
+      "id": "5.2.1-a1-3",
+      "outcome": "MAT.5.2.1",
+      "componentCode": "b",
+      "stage": "A1",
+      "prompt": "Yankı Eldiveni takılı: bir tarafa ne yaparsan diğerine de olur. Denge bozulur mu?",
+      "hints": [],
+      "game": "balance",
+      "setup": {
+        "left": [
+          {
+            "label": "",
+            "value": 2,
+            "visual": {
+              "shape": "circle",
+              "color": "cyan",
+              "size": "md"
+            }
+          }
+        ],
+        "right": [
+          {
+            "label": "",
+            "value": 2,
+            "visual": {
+              "shape": "circle",
+              "color": "cyan",
+              "size": "md"
+            }
+          }
+        ],
+        "mirrorMode": true
+      }
+    },
+    {
+      "id": "5.2.1-a1-4",
+      "outcome": "MAT.5.2.1",
+      "componentCode": "b",
+      "stage": "A1",
+      "prompt": "Daha büyük taşlarla aynı kuralı dene. Eldiven yine dengeyi koruyor mu?",
+      "hints": [],
+      "game": "balance",
+      "setup": {
+        "left": [
+          {
+            "label": "",
+            "value": 3,
+            "visual": {
+              "shape": "star",
+              "color": "amber",
+              "size": "lg"
+            }
+          }
+        ],
+        "right": [
+          {
+            "label": "",
+            "value": 3,
+            "visual": {
+              "shape": "star",
+              "color": "amber",
+              "size": "lg"
+            }
+          }
+        ],
+        "mirrorMode": true
+      }
+    }
   ],
   "a2": [
-    { "id": "5.2.1-a2-1", "outcome": "MAT.5.2.1", "componentCode": "c", "stage": "A2", "prompt": "Sır kutusunun içinde ne var? Dengeyi kur, x'i bul.", "hints": ["İki tarafa da aynısını yaparsan denge bozulmaz."], "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }, { "label": "3", "value": 3 }], "right": [{ "label": "10", "value": 10 }], "answer": 7 } },
-    { "id": "5.2.1-a2-2", "outcome": "MAT.5.2.1", "componentCode": "c", "stage": "A2", "prompt": "x kaç olmalı ki denge kurulsun?", "hints": ["Her iki taraftan aynı sayıyı çıkarabilirsin."], "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }, { "label": "5", "value": 5 }], "right": [{ "label": "12", "value": 12 }], "answer": 7 } },
-    { "id": "5.2.1-a2-3", "outcome": "MAT.5.2.1", "componentCode": "ç", "stage": "A2", "prompt": "Kuralı sembolle yaz: x kaç?", "hints": ["Sağ taraf 4 + 3 = 7."], "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }], "right": [{ "label": "4", "value": 4 }, { "label": "3", "value": 3 }], "answer": 7 } },
-    { "id": "5.2.1-a2-4", "outcome": "MAT.5.2.1", "componentCode": "ç", "stage": "A2", "prompt": "x'i sembolle bul.", "hints": ["9'dan 2 çıkar."], "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }, { "label": "2", "value": 2 }], "right": [{ "label": "9", "value": 9 }], "answer": 7 } }
+    {
+      "id": "5.2.1-a2-1",
+      "outcome": "MAT.5.2.1",
+      "componentCode": "c",
+      "stage": "A2",
+      "prompt": "Sır kutusunun içinde ne var? Dengeyi kur, x'i bul.",
+      "hints": [
+        "İki tarafa da aynısını yaparsan denge bozulmaz."
+      ],
+      "game": "balance",
+      "setup": {
+        "left": [
+          {
+            "label": "x",
+            "value": 0,
+            "kind": "unknown"
+          },
+          {
+            "label": "3",
+            "value": 3
+          }
+        ],
+        "right": [
+          {
+            "label": "10",
+            "value": 10
+          }
+        ],
+        "answer": 7
+      }
+    },
+    {
+      "id": "5.2.1-a2-2",
+      "outcome": "MAT.5.2.1",
+      "componentCode": "c",
+      "stage": "A2",
+      "prompt": "x kaç olmalı ki denge kurulsun?",
+      "hints": [
+        "Her iki taraftan aynı sayıyı çıkarabilirsin."
+      ],
+      "game": "balance",
+      "setup": {
+        "left": [
+          {
+            "label": "x",
+            "value": 0,
+            "kind": "unknown"
+          },
+          {
+            "label": "5",
+            "value": 5
+          }
+        ],
+        "right": [
+          {
+            "label": "12",
+            "value": 12
+          }
+        ],
+        "answer": 7
+      }
+    },
+    {
+      "id": "5.2.1-a2-3",
+      "outcome": "MAT.5.2.1",
+      "componentCode": "ç",
+      "stage": "A2",
+      "prompt": "Kuralı sembolle yaz: x kaç?",
+      "hints": [
+        "Sağ taraf 4 + 3 = 7."
+      ],
+      "game": "balance",
+      "setup": {
+        "left": [
+          {
+            "label": "x",
+            "value": 0,
+            "kind": "unknown"
+          }
+        ],
+        "right": [
+          {
+            "label": "4",
+            "value": 4
+          },
+          {
+            "label": "3",
+            "value": 3
+          }
+        ],
+        "answer": 7
+      }
+    },
+    {
+      "id": "5.2.1-a2-4",
+      "outcome": "MAT.5.2.1",
+      "componentCode": "ç",
+      "stage": "A2",
+      "prompt": "x'i sembolle bul.",
+      "hints": [
+        "9'dan 2 çıkar."
+      ],
+      "game": "balance",
+      "setup": {
+        "left": [
+          {
+            "label": "x",
+            "value": 0,
+            "kind": "unknown"
+          },
+          {
+            "label": "2",
+            "value": 2
+          }
+        ],
+        "right": [
+          {
+            "label": "9",
+            "value": 9
+          }
+        ],
+        "answer": 7
+      }
+    }
   ],
   "a3": [
-    { "id": "5.2.1-a3-1", "outcome": "MAT.5.2.1", "componentCode": "ç", "stage": "A3", "prompt": "x + 12 = 20. x kaç?", "hints": [], "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }, { "label": "12", "value": 12 }], "right": [{ "label": "20", "value": 20 }], "answer": 8 } },
-    { "id": "5.2.1-a3-2", "outcome": "MAT.5.2.1", "componentCode": "ç", "stage": "A3", "prompt": "x + 9 = 15. x kaç?", "hints": [], "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }, { "label": "9", "value": 9 }], "right": [{ "label": "15", "value": 15 }], "answer": 6 } },
-    { "id": "5.2.1-a3-3", "outcome": "MAT.5.2.1", "componentCode": "d", "stage": "A3", "prompt": "x + 4 = 11. x kaç? Neden emin olduğunu düşün.", "hints": [], "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }, { "label": "4", "value": 4 }], "right": [{ "label": "11", "value": 11 }], "answer": 7 } },
-    { "id": "5.2.1-a3-4", "outcome": "MAT.5.2.1", "componentCode": "d", "stage": "A3", "prompt": "x + 15 = 22. x kaç?", "hints": [], "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }, { "label": "15", "value": 15 }], "right": [{ "label": "22", "value": 22 }], "answer": 7 } }
+    {
+      "id": "5.2.1-a3-1",
+      "outcome": "MAT.5.2.1",
+      "componentCode": "ç",
+      "stage": "A3",
+      "prompt": "x + 12 = 20. x kaç?",
+      "hints": [],
+      "game": "balance",
+      "setup": {
+        "left": [
+          {
+            "label": "x",
+            "value": 0,
+            "kind": "unknown"
+          },
+          {
+            "label": "12",
+            "value": 12
+          }
+        ],
+        "right": [
+          {
+            "label": "20",
+            "value": 20
+          }
+        ],
+        "answer": 8
+      }
+    },
+    {
+      "id": "5.2.1-a3-2",
+      "outcome": "MAT.5.2.1",
+      "componentCode": "ç",
+      "stage": "A3",
+      "prompt": "x + 9 = 15. x kaç?",
+      "hints": [],
+      "game": "balance",
+      "setup": {
+        "left": [
+          {
+            "label": "x",
+            "value": 0,
+            "kind": "unknown"
+          },
+          {
+            "label": "9",
+            "value": 9
+          }
+        ],
+        "right": [
+          {
+            "label": "15",
+            "value": 15
+          }
+        ],
+        "answer": 6
+      }
+    },
+    {
+      "id": "5.2.1-a3-3",
+      "outcome": "MAT.5.2.1",
+      "componentCode": "d",
+      "stage": "A3",
+      "prompt": "x + 4 = 11. x kaç? Neden emin olduğunu düşün.",
+      "hints": [],
+      "game": "balance",
+      "setup": {
+        "left": [
+          {
+            "label": "x",
+            "value": 0,
+            "kind": "unknown"
+          },
+          {
+            "label": "4",
+            "value": 4
+          }
+        ],
+        "right": [
+          {
+            "label": "11",
+            "value": 11
+          }
+        ],
+        "answer": 7
+      }
+    },
+    {
+      "id": "5.2.1-a3-4",
+      "outcome": "MAT.5.2.1",
+      "componentCode": "d",
+      "stage": "A3",
+      "prompt": "x + 15 = 22. x kaç?",
+      "hints": [],
+      "game": "balance",
+      "setup": {
+        "left": [
+          {
+            "label": "x",
+            "value": 0,
+            "kind": "unknown"
+          },
+          {
+            "label": "15",
+            "value": 15
+          }
+        ],
+        "right": [
+          {
+            "label": "22",
+            "value": 22
+          }
+        ],
+        "answer": 7
+      }
+    }
   ],
   "assessment": {
     "id": "5.2.1-assessment",
     "outcome": "MAT.5.2.1",
     "items": [
-      { "id": "5.2.1-as-1", "outcome": "MAT.5.2.1", "componentCode": "c", "prompt": "x + 5 = 11. x kaç?", "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }, { "label": "5", "value": 5 }], "right": [{ "label": "11", "value": 11 }], "answer": 6 } },
-      { "id": "5.2.1-as-2", "outcome": "MAT.5.2.1", "componentCode": "c", "prompt": "x + 9 = 13. x kaç?", "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }, { "label": "9", "value": 9 }], "right": [{ "label": "13", "value": 13 }], "answer": 4 } },
-      { "id": "5.2.1-as-3", "outcome": "MAT.5.2.1", "componentCode": "ç", "prompt": "x + 2 = 10. x kaç?", "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }, { "label": "2", "value": 2 }], "right": [{ "label": "10", "value": 10 }], "answer": 8 } },
-      { "id": "5.2.1-as-4", "outcome": "MAT.5.2.1", "componentCode": "ç", "prompt": "x + 7 = 15. x kaç?", "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }, { "label": "7", "value": 7 }], "right": [{ "label": "15", "value": 15 }], "answer": 8 } },
-      { "id": "5.2.1-as-5", "outcome": "MAT.5.2.1", "componentCode": "ç", "prompt": "x + 4 = 12. x kaç?", "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }, { "label": "4", "value": 4 }], "right": [{ "label": "12", "value": 12 }], "answer": 8 } },
-      { "id": "5.2.1-as-6", "outcome": "MAT.5.2.1", "componentCode": "d", "prompt": "x + 11 = 18. x kaç?", "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }, { "label": "11", "value": 11 }], "right": [{ "label": "18", "value": 18 }], "answer": 7 } },
-      { "id": "5.2.1-as-7", "outcome": "MAT.5.2.1", "componentCode": "d", "prompt": "x + 6 = 13. x kaç?", "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }, { "label": "6", "value": 6 }], "right": [{ "label": "13", "value": 13 }], "answer": 7 } },
-      { "id": "5.2.1-as-8", "outcome": "MAT.5.2.1", "componentCode": "d", "prompt": "x + 13 = 20. x kaç?", "game": "balance", "setup": { "left": [{ "label": "x", "value": 0, "kind": "unknown" }, { "label": "13", "value": 13 }], "right": [{ "label": "20", "value": 20 }], "answer": 7 } }
+      {
+        "id": "5.2.1-as-1",
+        "outcome": "MAT.5.2.1",
+        "componentCode": "c",
+        "prompt": "x + 5 = 11. x kaç?",
+        "game": "balance",
+        "setup": {
+          "left": [
+            {
+              "label": "x",
+              "value": 0,
+              "kind": "unknown"
+            },
+            {
+              "label": "5",
+              "value": 5
+            }
+          ],
+          "right": [
+            {
+              "label": "11",
+              "value": 11
+            }
+          ],
+          "answer": 6
+        }
+      },
+      {
+        "id": "5.2.1-as-2",
+        "outcome": "MAT.5.2.1",
+        "componentCode": "c",
+        "prompt": "x + 9 = 13. x kaç?",
+        "game": "balance",
+        "setup": {
+          "left": [
+            {
+              "label": "x",
+              "value": 0,
+              "kind": "unknown"
+            },
+            {
+              "label": "9",
+              "value": 9
+            }
+          ],
+          "right": [
+            {
+              "label": "13",
+              "value": 13
+            }
+          ],
+          "answer": 4
+        }
+      },
+      {
+        "id": "5.2.1-as-3",
+        "outcome": "MAT.5.2.1",
+        "componentCode": "ç",
+        "prompt": "x + 2 = 10. x kaç?",
+        "game": "balance",
+        "setup": {
+          "left": [
+            {
+              "label": "x",
+              "value": 0,
+              "kind": "unknown"
+            },
+            {
+              "label": "2",
+              "value": 2
+            }
+          ],
+          "right": [
+            {
+              "label": "10",
+              "value": 10
+            }
+          ],
+          "answer": 8
+        }
+      },
+      {
+        "id": "5.2.1-as-4",
+        "outcome": "MAT.5.2.1",
+        "componentCode": "ç",
+        "prompt": "x + 7 = 15. x kaç?",
+        "game": "balance",
+        "setup": {
+          "left": [
+            {
+              "label": "x",
+              "value": 0,
+              "kind": "unknown"
+            },
+            {
+              "label": "7",
+              "value": 7
+            }
+          ],
+          "right": [
+            {
+              "label": "15",
+              "value": 15
+            }
+          ],
+          "answer": 8
+        }
+      },
+      {
+        "id": "5.2.1-as-5",
+        "outcome": "MAT.5.2.1",
+        "componentCode": "ç",
+        "prompt": "x + 4 = 12. x kaç?",
+        "game": "balance",
+        "setup": {
+          "left": [
+            {
+              "label": "x",
+              "value": 0,
+              "kind": "unknown"
+            },
+            {
+              "label": "4",
+              "value": 4
+            }
+          ],
+          "right": [
+            {
+              "label": "12",
+              "value": 12
+            }
+          ],
+          "answer": 8
+        }
+      },
+      {
+        "id": "5.2.1-as-6",
+        "outcome": "MAT.5.2.1",
+        "componentCode": "d",
+        "prompt": "x + 11 = 18. x kaç?",
+        "game": "balance",
+        "setup": {
+          "left": [
+            {
+              "label": "x",
+              "value": 0,
+              "kind": "unknown"
+            },
+            {
+              "label": "11",
+              "value": 11
+            }
+          ],
+          "right": [
+            {
+              "label": "18",
+              "value": 18
+            }
+          ],
+          "answer": 7
+        }
+      },
+      {
+        "id": "5.2.1-as-7",
+        "outcome": "MAT.5.2.1",
+        "componentCode": "d",
+        "prompt": "x + 6 = 13. x kaç?",
+        "game": "balance",
+        "setup": {
+          "left": [
+            {
+              "label": "x",
+              "value": 0,
+              "kind": "unknown"
+            },
+            {
+              "label": "6",
+              "value": 6
+            }
+          ],
+          "right": [
+            {
+              "label": "13",
+              "value": 13
+            }
+          ],
+          "answer": 7
+        }
+      },
+      {
+        "id": "5.2.1-as-8",
+        "outcome": "MAT.5.2.1",
+        "componentCode": "d",
+        "prompt": "x + 13 = 20. x kaç?",
+        "game": "balance",
+        "setup": {
+          "left": [
+            {
+              "label": "x",
+              "value": 0,
+              "kind": "unknown"
+            },
+            {
+              "label": "13",
+              "value": 13
+            }
+          ],
+          "right": [
+            {
+              "label": "20",
+              "value": 20
+            }
+          ],
+          "answer": 7
+        }
+      }
     ]
   }
 }

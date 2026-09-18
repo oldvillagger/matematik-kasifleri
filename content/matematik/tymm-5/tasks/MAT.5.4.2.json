@@ -1,34 +1,310 @@
 {
   "a1": [
-    { "id": "5.4.2-a1-1", "outcome": "MAT.5.4.2", "componentCode": "a", "stage": "A1", "prompt": "Zemini birim karelerle döşe. Kaç kare kullandın?", "hints": [], "game": "grid", "setup": { "maxCols": 6, "maxRows": 4, "goal": "explore" } },
-    { "id": "5.4.2-a1-2", "outcome": "MAT.5.4.2", "componentCode": "a", "stage": "A1", "prompt": "Farklı bir alanı döşe, tek tek say.", "hints": [], "game": "grid", "setup": { "maxCols": 5, "maxRows": 5, "goal": "explore" } },
-    { "id": "5.4.2-a1-3", "outcome": "MAT.5.4.2", "componentCode": "b", "stage": "A1", "prompt": "Bir satırı döşe, sonra kopyala düğmesini dene — daha hızlı olur mu?", "hints": [], "game": "grid", "setup": { "maxCols": 4, "maxRows": 3, "goal": "explore" } },
-    { "id": "5.4.2-a1-4", "outcome": "MAT.5.4.2", "componentCode": "b", "stage": "A1", "prompt": "Satır kopyala kısayolunu bir kez daha dene.", "hints": [], "game": "grid", "setup": { "maxCols": 8, "maxRows": 2, "goal": "explore" } }
+    {
+      "id": "5.4.2-a1-1",
+      "outcome": "MAT.5.4.2",
+      "componentCode": "a",
+      "stage": "A1",
+      "prompt": "Zemini karo karo döşe. Kesikli çerçevenin içi tamamen dolsun.",
+      "hints": [],
+      "game": "grid",
+      "setup": {
+        "maxCols": 6,
+        "maxRows": 4,
+        "goal": "explore",
+        "targetCols": 4,
+        "targetRows": 3
+      }
+    },
+    {
+      "id": "5.4.2-a1-2",
+      "outcome": "MAT.5.4.2",
+      "componentCode": "a",
+      "stage": "A1",
+      "prompt": "Başka bir oda. Aynı şekilde karolarla kapla.",
+      "hints": [],
+      "game": "grid",
+      "setup": {
+        "maxCols": 5,
+        "maxRows": 5,
+        "goal": "explore",
+        "targetCols": 3,
+        "targetRows": 4
+      }
+    },
+    {
+      "id": "5.4.2-a1-3",
+      "outcome": "MAT.5.4.2",
+      "componentCode": "b",
+      "stage": "A1",
+      "prompt": "Önce bir satırı doldur, sonra satır ekle. Kaplama nasıl büyüyor, fark ettin mi?",
+      "hints": [],
+      "game": "grid",
+      "setup": {
+        "maxCols": 6,
+        "maxRows": 4,
+        "goal": "explore",
+        "targetCols": 5,
+        "targetRows": 2
+      }
+    },
+    {
+      "id": "5.4.2-a1-4",
+      "outcome": "MAT.5.4.2",
+      "componentCode": "b",
+      "stage": "A1",
+      "prompt": "Geniş ve alçak bir oda. Satır satır ilerlemek burada da işe yarıyor mu?",
+      "hints": [],
+      "game": "grid",
+      "setup": {
+        "maxCols": 8,
+        "maxRows": 3,
+        "goal": "explore",
+        "targetCols": 7,
+        "targetRows": 2
+      }
+    }
   ],
   "a2": [
-    { "id": "5.4.2-a2-1", "outcome": "MAT.5.4.2", "componentCode": "c", "stage": "A2", "prompt": "Tüm zemini döşe. Toplam kaç birim kare?", "hints": ["Satır sayısı × sütun sayısı."], "game": "grid", "setup": { "maxCols": 5, "maxRows": 3, "goal": "area", "answer": 15 } },
-    { "id": "5.4.2-a2-2", "outcome": "MAT.5.4.2", "componentCode": "c", "stage": "A2", "prompt": "Alanı bul.", "hints": ["7 sütun, 2 satır."], "game": "grid", "setup": { "maxCols": 7, "maxRows": 2, "goal": "area", "answer": 14 } },
-    { "id": "5.4.2-a2-3", "outcome": "MAT.5.4.2", "componentCode": "ç", "stage": "A2", "prompt": "Bağıntıyı kullanarak alanı bul.", "hints": ["4 × 6 = ?"], "game": "grid", "setup": { "maxCols": 4, "maxRows": 6, "goal": "area", "answer": 24 } },
-    { "id": "5.4.2-a2-4", "outcome": "MAT.5.4.2", "componentCode": "ç", "stage": "A2", "prompt": "Alanı bul.", "hints": ["3 × 8 = ?"], "game": "grid", "setup": { "maxCols": 3, "maxRows": 8, "goal": "area", "answer": 24 } }
+    {
+      "id": "5.4.2-a2-1",
+      "outcome": "MAT.5.4.2",
+      "componentCode": "c",
+      "stage": "A2",
+      "prompt": "Tüm zemini döşe. Toplam kaç birim kare?",
+      "hints": [
+        "Satır sayısı × sütun sayısı."
+      ],
+      "game": "grid",
+      "setup": {
+        "maxCols": 5,
+        "maxRows": 3,
+        "goal": "area",
+        "answer": 15
+      }
+    },
+    {
+      "id": "5.4.2-a2-2",
+      "outcome": "MAT.5.4.2",
+      "componentCode": "c",
+      "stage": "A2",
+      "prompt": "Alanı bul.",
+      "hints": [
+        "7 sütun, 2 satır."
+      ],
+      "game": "grid",
+      "setup": {
+        "maxCols": 7,
+        "maxRows": 2,
+        "goal": "area",
+        "answer": 14
+      }
+    },
+    {
+      "id": "5.4.2-a2-3",
+      "outcome": "MAT.5.4.2",
+      "componentCode": "ç",
+      "stage": "A2",
+      "prompt": "Bağıntıyı kullanarak alanı bul.",
+      "hints": [
+        "4 × 6 = ?"
+      ],
+      "game": "grid",
+      "setup": {
+        "maxCols": 4,
+        "maxRows": 6,
+        "goal": "area",
+        "answer": 24
+      }
+    },
+    {
+      "id": "5.4.2-a2-4",
+      "outcome": "MAT.5.4.2",
+      "componentCode": "ç",
+      "stage": "A2",
+      "prompt": "Alanı bul.",
+      "hints": [
+        "3 × 8 = ?"
+      ],
+      "game": "grid",
+      "setup": {
+        "maxCols": 3,
+        "maxRows": 8,
+        "goal": "area",
+        "answer": 24
+      }
+    }
   ],
   "a3": [
-    { "id": "5.4.2-a3-1", "outcome": "MAT.5.4.2", "componentCode": "ç", "stage": "A3", "prompt": "9 × 3 dikdörtgenin alanı kaç?", "hints": [], "game": "grid", "setup": { "maxCols": 9, "maxRows": 3, "goal": "area", "answer": 27 } },
-    { "id": "5.4.2-a3-2", "outcome": "MAT.5.4.2", "componentCode": "ç", "stage": "A3", "prompt": "5 × 5 dikdörtgenin alanı kaç?", "hints": [], "game": "grid", "setup": { "maxCols": 5, "maxRows": 5, "goal": "area", "answer": 25 } },
-    { "id": "5.4.2-a3-3", "outcome": "MAT.5.4.2", "componentCode": "ç", "stage": "A3", "prompt": "6 × 6 dikdörtgenin alanı kaç?", "hints": [], "game": "grid", "setup": { "maxCols": 6, "maxRows": 6, "goal": "area", "answer": 36 } },
-    { "id": "5.4.2-a3-4", "outcome": "MAT.5.4.2", "componentCode": "ç", "stage": "A3", "prompt": "8 × 4 dikdörtgenin alanı kaç?", "hints": [], "game": "grid", "setup": { "maxCols": 8, "maxRows": 4, "goal": "area", "answer": 32 } }
+    {
+      "id": "5.4.2-a3-1",
+      "outcome": "MAT.5.4.2",
+      "componentCode": "ç",
+      "stage": "A3",
+      "prompt": "9 × 3 dikdörtgenin alanı kaç?",
+      "hints": [],
+      "game": "grid",
+      "setup": {
+        "maxCols": 9,
+        "maxRows": 3,
+        "goal": "area",
+        "answer": 27
+      }
+    },
+    {
+      "id": "5.4.2-a3-2",
+      "outcome": "MAT.5.4.2",
+      "componentCode": "ç",
+      "stage": "A3",
+      "prompt": "5 × 5 dikdörtgenin alanı kaç?",
+      "hints": [],
+      "game": "grid",
+      "setup": {
+        "maxCols": 5,
+        "maxRows": 5,
+        "goal": "area",
+        "answer": 25
+      }
+    },
+    {
+      "id": "5.4.2-a3-3",
+      "outcome": "MAT.5.4.2",
+      "componentCode": "ç",
+      "stage": "A3",
+      "prompt": "6 × 6 dikdörtgenin alanı kaç?",
+      "hints": [],
+      "game": "grid",
+      "setup": {
+        "maxCols": 6,
+        "maxRows": 6,
+        "goal": "area",
+        "answer": 36
+      }
+    },
+    {
+      "id": "5.4.2-a3-4",
+      "outcome": "MAT.5.4.2",
+      "componentCode": "ç",
+      "stage": "A3",
+      "prompt": "8 × 4 dikdörtgenin alanı kaç?",
+      "hints": [],
+      "game": "grid",
+      "setup": {
+        "maxCols": 8,
+        "maxRows": 4,
+        "goal": "area",
+        "answer": 32
+      }
+    }
   ],
   "assessment": {
     "id": "5.4.2-assessment",
     "outcome": "MAT.5.4.2",
     "items": [
-      { "id": "5.4.2-as-1", "outcome": "MAT.5.4.2", "componentCode": "c", "prompt": "6 × 3 dikdörtgenin alanı kaç?", "game": "grid", "setup": { "maxCols": 6, "maxRows": 3, "goal": "area", "answer": 18 } },
-      { "id": "5.4.2-as-2", "outcome": "MAT.5.4.2", "componentCode": "c", "prompt": "4 × 5 dikdörtgenin alanı kaç?", "game": "grid", "setup": { "maxCols": 4, "maxRows": 5, "goal": "area", "answer": 20 } },
-      { "id": "5.4.2-as-3", "outcome": "MAT.5.4.2", "componentCode": "ç", "prompt": "7 × 4 dikdörtgenin alanı kaç?", "game": "grid", "setup": { "maxCols": 7, "maxRows": 4, "goal": "area", "answer": 28 } },
-      { "id": "5.4.2-as-4", "outcome": "MAT.5.4.2", "componentCode": "ç", "prompt": "9 × 2 dikdörtgenin alanı kaç?", "game": "grid", "setup": { "maxCols": 9, "maxRows": 2, "goal": "area", "answer": 18 } },
-      { "id": "5.4.2-as-5", "outcome": "MAT.5.4.2", "componentCode": "ç", "prompt": "3 × 9 dikdörtgenin alanı kaç?", "game": "grid", "setup": { "maxCols": 3, "maxRows": 9, "goal": "area", "answer": 27 } },
-      { "id": "5.4.2-as-6", "outcome": "MAT.5.4.2", "componentCode": "ç", "prompt": "8 × 5 dikdörtgenin alanı kaç?", "game": "grid", "setup": { "maxCols": 8, "maxRows": 5, "goal": "area", "answer": 40 } },
-      { "id": "5.4.2-as-7", "outcome": "MAT.5.4.2", "componentCode": "ç", "prompt": "6 × 5 dikdörtgenin alanı kaç?", "game": "grid", "setup": { "maxCols": 6, "maxRows": 5, "goal": "area", "answer": 30 } },
-      { "id": "5.4.2-as-8", "outcome": "MAT.5.4.2", "componentCode": "ç", "prompt": "10 × 3 dikdörtgenin alanı kaç?", "game": "grid", "setup": { "maxCols": 10, "maxRows": 3, "goal": "area", "answer": 30 } }
+      {
+        "id": "5.4.2-as-1",
+        "outcome": "MAT.5.4.2",
+        "componentCode": "c",
+        "prompt": "6 × 3 dikdörtgenin alanı kaç?",
+        "game": "grid",
+        "setup": {
+          "maxCols": 6,
+          "maxRows": 3,
+          "goal": "area",
+          "answer": 18
+        }
+      },
+      {
+        "id": "5.4.2-as-2",
+        "outcome": "MAT.5.4.2",
+        "componentCode": "c",
+        "prompt": "4 × 5 dikdörtgenin alanı kaç?",
+        "game": "grid",
+        "setup": {
+          "maxCols": 4,
+          "maxRows": 5,
+          "goal": "area",
+          "answer": 20
+        }
+      },
+      {
+        "id": "5.4.2-as-3",
+        "outcome": "MAT.5.4.2",
+        "componentCode": "ç",
+        "prompt": "7 × 4 dikdörtgenin alanı kaç?",
+        "game": "grid",
+        "setup": {
+          "maxCols": 7,
+          "maxRows": 4,
+          "goal": "area",
+          "answer": 28
+        }
+      },
+      {
+        "id": "5.4.2-as-4",
+        "outcome": "MAT.5.4.2",
+        "componentCode": "ç",
+        "prompt": "9 × 2 dikdörtgenin alanı kaç?",
+        "game": "grid",
+        "setup": {
+          "maxCols": 9,
+          "maxRows": 2,
+          "goal": "area",
+          "answer": 18
+        }
+      },
+      {
+        "id": "5.4.2-as-5",
+        "outcome": "MAT.5.4.2",
+        "componentCode": "ç",
+        "prompt": "3 × 9 dikdörtgenin alanı kaç?",
+        "game": "grid",
+        "setup": {
+          "maxCols": 3,
+          "maxRows": 9,
+          "goal": "area",
+          "answer": 27
+        }
+      },
+      {
+        "id": "5.4.2-as-6",
+        "outcome": "MAT.5.4.2",
+        "componentCode": "ç",
+        "prompt": "8 × 5 dikdörtgenin alanı kaç?",
+        "game": "grid",
+        "setup": {
+          "maxCols": 8,
+          "maxRows": 5,
+          "goal": "area",
+          "answer": 40
+        }
+      },
+      {
+        "id": "5.4.2-as-7",
+        "outcome": "MAT.5.4.2",
+        "componentCode": "ç",
+        "prompt": "6 × 5 dikdörtgenin alanı kaç?",
+        "game": "grid",
+        "setup": {
+          "maxCols": 6,
+          "maxRows": 5,
+          "goal": "area",
+          "answer": 30
+        }
+      },
+      {
+        "id": "5.4.2-as-8",
+        "outcome": "MAT.5.4.2",
+        "componentCode": "ç",
+        "prompt": "10 × 3 dikdörtgenin alanı kaç?",
+        "game": "grid",
+        "setup": {
+          "maxCols": 10,
+          "maxRows": 3,
+          "goal": "area",
+          "answer": 30
+        }
+      }
     ]
   }
 }

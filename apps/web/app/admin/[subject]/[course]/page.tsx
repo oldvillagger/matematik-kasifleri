@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { loadCourse } from "@matematik-kasifleri/curriculum";
-import { findTopic } from "../../../topics";
+import { findTopic } from "../../../lib/topics";
 
 export default async function AdminCoursePage({
   params,

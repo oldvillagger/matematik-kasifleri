@@ -15,6 +15,7 @@
     "@matematik-kasifleri/curriculum": "workspace:*",
     "@matematik-kasifleri/engine-core": "workspace:*",
     "@matematik-kasifleri/manipulatives": "workspace:*",
+    "@matematik-kasifleri/progression": "workspace:*",
     "@matematik-kasifleri/ui-kit": "workspace:*",
     "next": "^15.1.0",
     "react": "^19.0.0",
@@ -24,6 +25,9 @@
     "@types/node": "^22.10.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.6.1",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
     "typescript": "^5.7.0"
   }
 }
